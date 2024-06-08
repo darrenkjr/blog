@@ -1,0 +1,30 @@
+---
+title: "Darren Rajit"
+about: 
+    template: trestles
+    image: profile.jpg
+    image-shape: round
+    links: 
+        - icon: linkedin
+          text: Linkedin 
+          href: https://www.linkedin.com/in/darren-rajit-0aa783b6/
+        - icon: github
+          text: Github
+          href: https://github.com/darrenkjr/
+---
+::: {.column-page}
+
+G'day! I'm a PhD Student at the [Monash Centre for Health Research and Implementation (MCHRI)](https://mchri.org.au/), interested in Learning Health Systems, Complexity and Tech. 
+
+In practice, I split my time between:
+
+*  Developing ([1](https://darrenkjr-automatedcitationsearch.streamlit.app/)) and evaluating tools to streamline evidence synthesis during evidence-based guideline development and;  
+*  Understanding how best to implement Learning Health Systems as a [framework](https://www.frontiersin.org/articles/10.3389/fmed.2021.730021/full) for Healthcare Improvement
+
+In a previous life, I was a Biomedical Engineer (Materials) by training, but now find myself wearing hats that say things like "Data Analyst",  "Implementation Scientist", and "Generally tries to be useful at all times". 
+
+Outside of work, I fall into rabbit holes, run, and lift.
+
+This slice of the internet is where I maintain my CV, occasional side projects, [musings](blog_listing.qmd), and eventually, my publications. 
+
+:::
