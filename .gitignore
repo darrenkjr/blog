@@ -1,3 +1,4 @@
-/.quarto/
-drafts/
+/drafts/
 .quarto
+/.quarto/
+/_site/
