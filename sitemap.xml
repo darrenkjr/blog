@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://darrenkjr.github.io/blog/blog_listing.html</loc>
-    <lastmod>2024-06-08T03:19:47.890Z</lastmod>
-  </url>
-  <url>
     <loc>https://darrenkjr.github.io/blog/index.html</loc>
-    <lastmod>2024-06-08T03:19:48.474Z</lastmod>
+    <lastmod>2024-06-08T04:28:49.196Z</lastmod>
   </url>
   <url>
-    <loc>https://darrenkjr.github.io/blog/posts/garmin_analysis.html</loc>
-    <lastmod>2024-06-08T03:19:49.112Z</lastmod>
+    <loc>https://darrenkjr.github.io/blog/blog_listing.html</loc>
+    <lastmod>2024-06-08T04:28:48.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://darrenkjr.github.io/blog/drafts/garmin_analysis.html</loc>
+    <lastmod>2024-06-08T04:28:48.751Z</lastmod>
   </url>
 </urlset>
