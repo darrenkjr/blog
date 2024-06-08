@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog_listing.html",
-    "items": []
+    "items": [
+      "/posts/on_having_little_to_say.html"
+    ]
   }
 ]

@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Darren Rajit",
+    "objectID": "posts/on_having_little_to_say.html",
+    "href": "posts/on_having_little_to_say.html",
+    "title": "On Having Little To Say",
     "section": "",
-    "text": "G’day! I’m a PhD Student at the Monash Centre for Health Research and Implementation (MCHRI), interested in Learning Health Systems, Complexity and Tech.\nIn practice, I split my time between:\n\nDeveloping (1) and evaluating tools to streamline evidence synthesis during evidence-based guideline development and;\n\nUnderstanding how best to implement Learning Health Systems as a framework for Healthcare Improvement\n\nIn a previous life, I was a Biomedical Engineer (Materials) by training, but now find myself wearing hats that say things like “Data Analyst”, “Implementation Scientist”, and “Generally tries to be useful at all times”.\nOutside of work, I fall into rabbit holes, run, and lift.\nThis slice of the internet is where I maintain my CV, occasional side projects, musings, and oocassional commentary on my publications."
-  },
-  {
-    "objectID": "blog_listing.html",
-    "href": "blog_listing.html",
-    "title": "Blog",
-    "section": "",
-    "text": "No matching items"
+    "text": "There was a time where writing was a source of joy for me. Catharsis, renewal, synthesis, and everything in between. Late nights where I would sift through the cobwebs in my head, squeeze out something that made sense to me, and regurgitate what was in my head into form. Over the past 5 years, I seem to have lost the capacity to do so. To create as it were, and it troubles me that I have settled into a steady rhythm of slack-jawed consuming.\nI wonder what my opinions are sometimes. Whether they are truly mine. I am one of the early generations that grew up on the internet, and I wonder how the cacophony of algorithmically constructed echo chambers that I’ve inardvatently found myself in has warped my point of view and sense of self. For a time there, I think I lost my voice. I think there is something there where losing the desire and ability to create comes hand in hand with losing who you are.\nI think I’m done with that. I’m done with taking without giving back. I’ve begun to notice how insidious that exchange is. Letting the Algorithm (TM) feed me my opinions, consuming without thought, and never sitting down and simply … ‘thinking’. I don’t think humans were meant to live this way. To hear and subsume the opinions of millions of faceless voices. Spend too long in the ether and you become as faceless and as formless as it is. Spending time alone and working out who you are, maybe that’s where the meat and potatoes is. At least meat and potatoes have form, and I think it’s time I assumed something of the sort.\nI have nothing to base this on, but it seems that culturally, humanity seems to have stagnated. Everything seem to be stuck in a grayscale of sameness. Our cars look the same, our neighbourhoods look the same, we’re dressing the same, so many things feel to me like they’re merging into one another, and because of it, losing form. And as we wade through this grimy monoculture, we all collectively start to lose ourselves. My gut tells me that the echo chambers we’ve built, the ones where we are fed well.. more of the same, has contributed to this. Peek under the hood and I wonder how much of the capitalist logic of profit and optimisation above all else has led to the ennui I currently feel. Trite? Probably. I believe I might be treading well worn ground here, but it feels original to me, and in this, I find at least some spark to hold on to.\nAnd so now I wonder why over the years I am left at having very little to say. Maybe it’s age? I’ll be 30 in a year, and I have felt the idealism I used to have start to slip away from me. I am entering my prime, but why does it feel like I am exiting it? We’ve created tools that I believe are robbing us of culture and so what is our way back? Truthfully, I don’t know.\nMy gut is telling me that bringing back sincerity again is the answer. Doing things for the sake of doing things and nothing more, nothing less, is an act of rebellion. Yes, this includes doing absolutely nothing. Be idle. Live in paradox. Pratice delicious irony, born from the internet, sincerely. How many levels are we on now? I forget. How ironic.\nIn there, I think, I might find something to say. And having written that, I find myself feeling this with the utmost sincerity."
   },
   {
     "objectID": "drafts/garmin_analysis.html",
@@ -68,5 +61,19 @@
     "title": "Race Report Template",
     "section": "Conclusion",
     "text": "Conclusion\n\n\nCode\nimport pandas as pd \nimport fitdecode \n\npath = '../posts/datasets/11568900326_ACTIVITY.fit'\n\n# Open fit file and parse through the data\nwith fitdecode.FitReader(path) as fit:\n    \n    for frame in fit: \n\n        if isinstance(frame, fitdecode.records.FitDataMessage):\n            if frame.name == 'record': \n                if frame.has_field is True:\n                    print(frame.field_name, frame.value)\n\n\n\n\nModuleNotFoundError: No module named 'fitdecode'"
+  },
+  {
+    "objectID": "blog_listing.html",
+    "href": "blog_listing.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJun 8, 2024\n\n\nOn Having Little To Say\n\n\nDarren Rajit\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Darren Rajit",
+    "section": "",
+    "text": "G’day! I’m a PhD Student at the Monash Centre for Health Research and Implementation (MCHRI), interested in Learning Health Systems, Complexity and Tech.\nIn practice, I split my time between:\n\nDeveloping (1) and evaluating tools to streamline evidence synthesis during evidence-based guideline development and;\n\nUnderstanding how best to implement Learning Health Systems as a framework for Healthcare Improvement\n\nIn a previous life, I was a Biomedical Engineer (Materials) by training, but now find myself wearing hats that say things like “Data Analyst”, “Implementation Scientist”, and “Generally tries to be useful at all times”.\nOutside of work, I fall into rabbit holes, run, and lift.\nThis slice of the internet is where I maintain my CV, occasional side projects, musings, and oocassional commentary on my publications."
   }
 ]
