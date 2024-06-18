@@ -1,0 +1,55 @@
+---
+date: last-modified
+date-format: "DD MMMM, YYYY"
+title: PhD Thesis by Publication - Notes
+author: Darren Rajit
+format: 
+    html: 
+        code-fold: true
+reference-location: margin
+categories: [General, Personal, PhD, notes]
+---
+
+::: callout-note
+These notes are based on a presentation I received at the Institute I currently work at, based at Monash University, Australia. Most people at my institute also do a thesis by publication, so this is from that POV.
+:::
+
+## Thesis by Publication: 
+* Thesis must reflect a sustained and cohesive theme with framing text linking chapter / papers / manuscripts 
+* It is unlikely that your assessor will read the entire thesis in one sitting - so make sure you orient the research assessor at the very start of your thesis, and also throughout the chapters that you have compiled together 
+* All theses must use approved thesis preliminary pages ^[Monash Specific Requirement]
+* At this point, generative AI is a thing - so you need to acknowledge this as part of your thesis (if you've used this)
+* The whole point of the thesis is to show that you have come of age as an independent reseracher. Introduction, linking text and conclusion should reflect this. 
+
+### Authorship 
+* There is no set number of publications, but usually in public health, 4 - 5 original research works, but atleast 1 needs to have been published, the rest, submitted (not necessarily accepted)
+* But this is up to the professional judgement of who's reading your theses
+* How research fudning works in Australia is looking at your top 10 publications, so quality vs quantity - aim for high impact journals. 
+* Papers thata are submitted should have a substantial contribution from you (at least 50%)
+* Other papers that are minor contributions should be kept in a minimum. You can still put them in though if they contribute to the narrative, or you can just chuck them into the appendix. 
+
+### Extra Things (Sans Submitted Publications)
+* General Introduction
+* Integrative Discussion with Conclusion 
+* Future directions of the research
+
+### Other Notes
+* Integrative discussion: needs to tie everything together, can be relatively brief, and should not repeat what youve said in your original individual papers 
+
+### Chapter 1 : General Introduction 
+* Use your lit review to orient the reader to the thesis topic and why your reserach is significant 
+* Outline why your research is significant 
+* Hypothesis and aims should be clearly stated 
+
+### Chapter X : Integrated Discussion with a Conclusion 
+* Should provide a link between your project outcomes and highlight their significance 
+* Avoid repeating the discussion points in your indiviudal papers 
+* Instead summarise your studiesa nd then provide a more 'overarching' discussion 
+
+### What Are Assessors Assessing? 
+* Whether the student makes and original and substantial contribution to the discipline or area of professional practice 
+* Critically reflect on, and engage with complex ideas to create new knowedlege and understanding 
+* Thesis presentation is appropriate (language, form etc.)
+
+## Post PhD 
+* Don't forget about what you want to do post PhD!!
