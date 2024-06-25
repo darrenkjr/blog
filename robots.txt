@@ -1,1 +1,1 @@
-Sitemap: https://darrenkjr.github.io/blog/sitemap.xml
+Sitemap: https://darrenkjr.com/sitemap.xml
