@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="cell-0" class="cell" data-execution_count="526">
+<div id="cell-0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-1" class="cell" data-execution_count="527">
+<div id="cell-1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ironman_path <span class="op">=</span> <span class="st">"../datasets/Half_Ironman_df6.csv"</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(ironman_path)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'count'</span>] <span class="op">=</span> <span class="dv">1</span></span>
@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df_amateur <span class="op">=</span> df_men[df_men[<span class="st">'AgeGroup'</span>] <span class="op">!=</span> <span class="st">'00'</span>]</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df_pro <span class="op">=</span> df_men[df_men[<span class="st">'AgeGroup'</span>] <span class="op">==</span> <span class="st">'00'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="528">
+<div id="cell-2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>time_cols <span class="op">=</span> [<span class="st">'SwimTime'</span>, <span class="st">'BikeTime'</span>, <span class="st">'RunTime'</span>, <span class="st">'FinishTime'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>overall_rank_cols <span class="op">=</span> []</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>yearly_rank_cols <span class="op">=</span> []</span>
@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="529">
+<div id="cell-3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#set order of age groups </span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>age_order <span class="op">=</span> [<span class="st">'18-24'</span>,<span class="st">'25-29'</span>, <span class="st">'30-34'</span>, <span class="st">'35-39'</span>, <span class="st">'40-44'</span>, <span class="st">'45-49'</span>, <span class="st">'50-54'</span>, <span class="st">'55-59'</span>, <span class="st">'60-64'</span>]</span>
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df_amateur_workingage[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.Categorical(df_amateur_workingage[<span class="st">'AgeGroup'</span>], categories<span class="op">=</span>age_order, ordered<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df_amateur_workingage[<span class="st">'Performance_category'</span>] <span class="op">=</span> pd.cut(df_amateur_workingage[<span class="st">'FinishTime_overall_rank'</span>], bins<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">100</span>], labels<span class="op">=</span>[<span class="st">'Elite'</span>, <span class="st">'Sub-Elite'</span>, <span class="st">'Above Average'</span>, <span class="st">'Average'</span>, <span class="st">'Below Average'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="530">
+<div id="cell-4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>age_dist_year <span class="op">=</span> df_amateur_workingage[[<span class="st">'EventYear'</span>, <span class="st">'AgeGroup'</span>, <span class="st">'count'</span>]].groupby([<span class="st">'EventYear'</span>, <span class="st">'AgeGroup'</span>]).<span class="bu">sum</span>()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#normalize counts and plot distributions </span></span>
@@ -227,9 +227,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="531">
+<div id="cell-5" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pivot_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="531">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -471,10 +471,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="532">
+<div id="cell-6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="533">
+<div id="cell-7" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## What does average mean? </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#45 - 55th percentile </span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_amateur_yearly_avg <span class="op">=</span> pd.DataFrame(df_amateur[<span class="st">'EventYear'</span>].unique()).rename(columns<span class="op">=</span>{<span class="dv">0</span>:<span class="st">'EventYear'</span>})</span>
@@ -500,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#sort by event year </span></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>df_pro_yearly_avg <span class="op">=</span> df_pro_yearly_avg.sort_values(by<span class="op">=</span><span class="st">'EventYear'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="534">
+<div id="cell-8" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#scatter plot of event year by 50th percentile times </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df_amateur_yearly_avg, x<span class="op">=</span><span class="st">'EventYear'</span>, y<span class="op">=</span><span class="st">'FinishTime_50_percentile'</span>, label<span class="op">=</span><span class="st">'Amateur'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -511,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="535">
+<div id="cell-9" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_amateur_yearly_avg.reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>yoy_change_df <span class="op">=</span> pd.DataFrame(df_amateur_yearly_avg[<span class="st">'EventYear'</span>]).rename(columns<span class="op">=</span>{<span class="dv">0</span>:<span class="st">'EventYear'</span>}).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> [<span class="dv">50</span>,<span class="dv">65</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">95</span>]: </span>
@@ -542,9 +542,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="536">
+<div id="cell-10" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>avg_change_df_pct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="536">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -582,13 +582,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="537">
+<div id="cell-11" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot yoy_change distributions </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-12" class="cell" data-execution_count="540">
+<div id="cell-12" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_amateur_yearly_avg.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="540">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>Index(['EventYear', 'SwimTime_100_percentile', 'BikeTime_100_percentile',
        'RunTime_100_percentile', 'FinishTime_100_percentile',
        'SwimTime_95_percentile', 'BikeTime_95_percentile',
@@ -610,11 +610,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        'SwimTime_55_percentile', 'BikeTime_55_percentile',
        'RunTime_55_percentile', 'FinishTime_55_percentile',
        'SwimTime_50_percentile', 'BikeTime_50_percentile',
-       'RunTime_50_percentile', 'FinishTime_50_percentile'],
+       'RunTime_50_percentile', 'FinishTime_50_percentile',
+       'SwimTime_45_percentile', 'BikeTime_45_percentile',
+       'RunTime_45_percentile', 'FinishTime_45_percentile'],
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="539">
+<div id="cell-13" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> seconds_to_hhmmss(seconds):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> seconds <span class="op">//</span> <span class="dv">3600</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> (seconds <span class="op">%</span> <span class="dv">3600</span>) <span class="op">//</span> <span class="dv">60</span></span>
@@ -675,61 +677,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="co"># handles, labels = axs[0].get_legend_handles_labels()</span></span>
 <span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.tight_layout(rect=[0.05, 0.1, 0.95, 0.95])</span></span>
 <span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg ansi-bold">c:\Users\dkraj2\Anaconda3\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_loc</span><span class="ansi-blue-fg ansi-bold">(self, key, method, tolerance)</span>
-<span class="ansi-green-fg">   3628</span>             <span class="ansi-green-fg ansi-bold">try</span><span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg ansi-bold">-&gt; 3629</span><span class="ansi-yellow-fg ansi-bold">                 </span><span class="ansi-green-fg ansi-bold">return</span> self<span class="ansi-yellow-fg ansi-bold">.</span>_engine<span class="ansi-yellow-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-fg ansi-bold">(</span>casted_key<span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3630</span>             <span class="ansi-green-fg ansi-bold">except</span> KeyError <span class="ansi-green-fg ansi-bold">as</span> err<span class="ansi-yellow-fg ansi-bold">:</span>
-
-<span class="ansi-green-fg ansi-bold">c:\Users\dkraj2\Anaconda3\lib\site-packages\pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-fg ansi-bold">()</span>
-
-<span class="ansi-green-fg ansi-bold">c:\Users\dkraj2\Anaconda3\lib\site-packages\pandas\_libs\index.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.index.IndexEngine.get_loc</span><span class="ansi-blue-fg ansi-bold">()</span>
-
-<span class="ansi-green-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-fg ansi-bold">()</span>
-
-<span class="ansi-green-fg ansi-bold">pandas\_libs\hashtable_class_helper.pxi</span> in <span class="ansi-cyan-fg">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="ansi-blue-fg ansi-bold">()</span>
-
-<span class="ansi-red-fg ansi-bold">KeyError</span>: 'SwimTime_45_percentile'
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg ansi-bold">~\AppData\Local\Temp\ipykernel_16916\2855531880.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     13</span> 
-<span class="ansi-green-fg">     14</span> sns<span class="ansi-yellow-fg ansi-bold">.</span>lineplot<span class="ansi-yellow-fg ansi-bold">(</span>data <span class="ansi-yellow-fg ansi-bold">=</span> df_amateur_yearly_avg<span class="ansi-yellow-fg ansi-bold">,</span> x <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'EventYear'</span><span class="ansi-yellow-fg ansi-bold">,</span> y <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'SwimTime_50_percentile'</span><span class="ansi-yellow-fg ansi-bold">,</span> label <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'Swim (Amateur)'</span><span class="ansi-yellow-fg ansi-bold">,</span> color <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'blue'</span><span class="ansi-yellow-fg ansi-bold">,</span> ax<span class="ansi-yellow-fg ansi-bold">=</span>axs<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'A'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg ansi-bold">---&gt; 15</span><span class="ansi-yellow-fg ansi-bold"> </span>axs<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'A'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">.</span>fill_between<span class="ansi-yellow-fg ansi-bold">(</span>df_amateur_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'EventYear'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> df_amateur_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'SwimTime_45_percentile'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> df_amateur_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'SwimTime_55_percentile'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> alpha<span class="ansi-yellow-fg ansi-bold">=</span><span class="ansi-cyan-fg ansi-bold">0.2</span><span class="ansi-yellow-fg ansi-bold">,</span> color <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'blue'</span><span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     16</span> sns<span class="ansi-yellow-fg ansi-bold">.</span>lineplot<span class="ansi-yellow-fg ansi-bold">(</span>data <span class="ansi-yellow-fg ansi-bold">=</span> df_pro_yearly_avg<span class="ansi-yellow-fg ansi-bold">,</span> x <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'EventYear'</span><span class="ansi-yellow-fg ansi-bold">,</span> y <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'SwimTime_50_percentile'</span><span class="ansi-yellow-fg ansi-bold">,</span> label <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'Swim (Pro)'</span><span class="ansi-yellow-fg ansi-bold">,</span> linestyle<span class="ansi-yellow-fg ansi-bold">=</span><span class="ansi-blue-fg ansi-bold">'dotted'</span><span class="ansi-yellow-fg ansi-bold">,</span> color <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'blue'</span><span class="ansi-yellow-fg ansi-bold">,</span> ax <span class="ansi-yellow-fg ansi-bold">=</span> axs<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'A'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     17</span> axs<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'A'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">.</span>fill_between<span class="ansi-yellow-fg ansi-bold">(</span>df_pro_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'EventYear'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> df_pro_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'SwimTime_45_percentile'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> df_pro_yearly_avg<span class="ansi-yellow-fg ansi-bold">[</span><span class="ansi-blue-fg ansi-bold">'SwimTime_55_percentile'</span><span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> alpha<span class="ansi-yellow-fg ansi-bold">=</span><span class="ansi-cyan-fg ansi-bold">0.2</span><span class="ansi-yellow-fg ansi-bold">,</span> color <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-blue-fg ansi-bold">'blue'</span><span class="ansi-yellow-fg ansi-bold">)</span>
-
-<span class="ansi-green-fg ansi-bold">c:\Users\dkraj2\Anaconda3\lib\site-packages\pandas\core\frame.py</span> in <span class="ansi-cyan-fg">__getitem__</span><span class="ansi-blue-fg ansi-bold">(self, key)</span>
-<span class="ansi-green-fg">   3503</span>             <span class="ansi-green-fg ansi-bold">if</span> self<span class="ansi-yellow-fg ansi-bold">.</span>columns<span class="ansi-yellow-fg ansi-bold">.</span>nlevels <span class="ansi-yellow-fg ansi-bold">&gt;</span> <span class="ansi-cyan-fg ansi-bold">1</span><span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   3504</span>                 <span class="ansi-green-fg ansi-bold">return</span> self<span class="ansi-yellow-fg ansi-bold">.</span>_getitem_multilevel<span class="ansi-yellow-fg ansi-bold">(</span>key<span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg ansi-bold">-&gt; 3505</span><span class="ansi-yellow-fg ansi-bold">             </span>indexer <span class="ansi-yellow-fg ansi-bold">=</span> self<span class="ansi-yellow-fg ansi-bold">.</span>columns<span class="ansi-yellow-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-fg ansi-bold">(</span>key<span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3506</span>             <span class="ansi-green-fg ansi-bold">if</span> is_integer<span class="ansi-yellow-fg ansi-bold">(</span>indexer<span class="ansi-yellow-fg ansi-bold">)</span><span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   3507</span>                 indexer <span class="ansi-yellow-fg ansi-bold">=</span> <span class="ansi-yellow-fg ansi-bold">[</span>indexer<span class="ansi-yellow-fg ansi-bold">]</span>
-
-<span class="ansi-green-fg ansi-bold">c:\Users\dkraj2\Anaconda3\lib\site-packages\pandas\core\indexes\base.py</span> in <span class="ansi-cyan-fg">get_loc</span><span class="ansi-blue-fg ansi-bold">(self, key, method, tolerance)</span>
-<span class="ansi-green-fg">   3629</span>                 <span class="ansi-green-fg ansi-bold">return</span> self<span class="ansi-yellow-fg ansi-bold">.</span>_engine<span class="ansi-yellow-fg ansi-bold">.</span>get_loc<span class="ansi-yellow-fg ansi-bold">(</span>casted_key<span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   3630</span>             <span class="ansi-green-fg ansi-bold">except</span> KeyError <span class="ansi-green-fg ansi-bold">as</span> err<span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg ansi-bold">-&gt; 3631</span><span class="ansi-yellow-fg ansi-bold">                 </span><span class="ansi-green-fg ansi-bold">raise</span> KeyError<span class="ansi-yellow-fg ansi-bold">(</span>key<span class="ansi-yellow-fg ansi-bold">)</span> <span class="ansi-green-fg ansi-bold">from</span> err
-<span class="ansi-green-fg">   3632</span>             <span class="ansi-green-fg ansi-bold">except</span> TypeError<span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   3633</span>                 <span class="ansi-red-fg ansi-bold"># If we have a listlike key, _check_indexing_error will raise</span>
-
-<span class="ansi-red-fg ansi-bold">KeyError</span>: 'SwimTime_45_percentile'</pre>
-</div>
-</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ironman_analyses_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="ironman_analyses_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell">
+<div id="cell-14" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#find age group distributions where the middle 50% of finish times  are </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_working_age <span class="op">=</span> df_amateur[df_amateur[<span class="st">'AgeGroup'</span>].isin([<span class="st">'18-24'</span>,<span class="st">'25-29'</span>, <span class="st">'30-34'</span>, <span class="st">'35-39'</span>, <span class="st">'40-44'</span>, <span class="st">'45-49'</span>, <span class="st">'50-54'</span>, <span class="st">'55-59'</span>, <span class="st">'60-64'</span>])]</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
@@ -746,7 +702,7 @@ The above exception was the direct cause of the following exception:
 </div>
 </div>
 </div>
-<div id="cell-15" class="cell">
+<div id="cell-15" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#find age group distributions where the middle 50% of finish times  are </span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>agegrp_abvabg <span class="op">=</span> df_working_age[[<span class="st">'EventYear'</span>, <span class="st">'AgeGroup'</span>, <span class="st">'FinishTime'</span>]].groupby([<span class="st">'EventYear'</span>, <span class="st">'AgeGroup'</span>])[<span class="st">'FinishTime'</span>].quantile([<span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>]).unstack().reset_index()</span>
@@ -761,9 +717,9 @@ The above exception was the direct cause of the following exception:
 </div>
 </div>
 </div>
-<div id="cell-16" class="cell">
+<div id="cell-16" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_pro</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="266">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -982,9 +938,9 @@ The above exception was the direct cause of the following exception:
 </div>
 </div>
 </div>
-<div id="cell-17" class="cell">
+<div id="cell-17" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>agegrp_abvabg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="262">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -994,9 +950,9 @@ The above exception was the direct cause of the following exception:
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">EventYear</th>
 <th data-quarto-table-cell-role="th">AgeGroup</th>
-<th data-quarto-table-cell-role="th">FinishTime_60pct</th>
-<th data-quarto-table-cell-role="th">FinishTime_65pct</th>
-<th data-quarto-table-cell-role="th">FinishTime_70pct</th>
+<th data-quarto-table-cell-role="th">FinishTime_top60pct</th>
+<th data-quarto-table-cell-role="th">FinishTime_top65pct</th>
+<th data-quarto-table-cell-role="th">FinishTime_top70pct</th>
 </tr>
 </thead>
 <tbody>
@@ -1004,41 +960,41 @@ The above exception was the direct cause of the following exception:
 <td data-quarto-table-cell-role="th">0</td>
 <td>2004</td>
 <td>18-24</td>
-<td>21126.6</td>
-<td>21464.70</td>
-<td>21684.8</td>
+<td>18329.2</td>
+<td>17289.2</td>
+<td>17015.96</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>2004</td>
 <td>25-29</td>
-<td>20660.8</td>
-<td>20876.10</td>
-<td>21550.6</td>
+<td>18193.2</td>
+<td>16926.9</td>
+<td>15496.41</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>2004</td>
 <td>30-34</td>
-<td>20733.0</td>
-<td>21024.90</td>
-<td>21473.8</td>
+<td>17947.4</td>
+<td>17352.0</td>
+<td>15587.51</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>2004</td>
 <td>35-39</td>
-<td>21039.8</td>
-<td>21359.00</td>
-<td>21571.4</td>
+<td>18296.0</td>
+<td>17495.6</td>
+<td>16139.28</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>2004</td>
 <td>40-44</td>
-<td>21010.8</td>
-<td>21282.90</td>
-<td>21605.8</td>
+<td>18149.4</td>
+<td>17504.4</td>
+<td>16429.06</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -1049,55 +1005,55 @@ The above exception was the direct cause of the following exception:
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">97</td>
-<td>2020</td>
-<td>25-29</td>
-<td>20120.0</td>
-<td>20463.40</td>
-<td>20902.2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">98</td>
-<td>2020</td>
-<td>30-34</td>
-<td>20212.2</td>
-<td>20644.35</td>
-<td>21063.2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">99</td>
-<td>2020</td>
-<td>35-39</td>
-<td>20417.4</td>
-<td>20798.10</td>
-<td>21137.5</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">100</td>
+<td data-quarto-table-cell-role="th">148</td>
 <td>2020</td>
 <td>40-44</td>
-<td>20721.6</td>
-<td>21090.80</td>
-<td>21540.0</td>
+<td>17647.2</td>
+<td>16801.2</td>
+<td>15318.56</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">101</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">149</td>
 <td>2020</td>
 <td>45-49</td>
-<td>20804.6</td>
-<td>21151.50</td>
-<td>21609.8</td>
+<td>17813.6</td>
+<td>17092.2</td>
+<td>15888.42</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">150</td>
+<td>2020</td>
+<td>50-54</td>
+<td>18107.4</td>
+<td>17434.8</td>
+<td>16088.40</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">151</td>
+<td>2020</td>
+<td>55-59</td>
+<td>18803.4</td>
+<td>17844.8</td>
+<td>16724.53</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">152</td>
+<td>2020</td>
+<td>60-64</td>
+<td>19162.4</td>
+<td>18302.8</td>
+<td>16914.76</td>
 </tr>
 </tbody>
 </table>
 
-<p>102 rows × 5 columns</p>
+<p>153 rows × 5 columns</p>
 </div>
 </div>
 </div>
-<div id="cell-18" class="cell">
+<div id="cell-18" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>agegrp_mid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="263">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -1162,117 +1118,688 @@ The above exception was the direct cause of the following exception:
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">97</td>
-<td>2020</td>
-<td>25-29</td>
-<td>19192.60</td>
-<td>19506.0</td>
-<td>19785.90</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">98</td>
-<td>2020</td>
-<td>30-34</td>
-<td>19115.55</td>
-<td>19416.5</td>
-<td>19799.15</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">99</td>
-<td>2020</td>
-<td>35-39</td>
-<td>19257.45</td>
-<td>19589.5</td>
-<td>19987.10</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">100</td>
+<td data-quarto-table-cell-role="th">148</td>
 <td>2020</td>
 <td>40-44</td>
 <td>19558.70</td>
 <td>19917.0</td>
 <td>20288.60</td>
 </tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">101</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">149</td>
 <td>2020</td>
 <td>45-49</td>
 <td>19595.20</td>
 <td>19967.0</td>
 <td>20349.90</td>
 </tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">150</td>
+<td>2020</td>
+<td>50-54</td>
+<td>20023.20</td>
+<td>20372.0</td>
+<td>20641.80</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">151</td>
+<td>2020</td>
+<td>55-59</td>
+<td>20578.00</td>
+<td>20884.5</td>
+<td>21291.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">152</td>
+<td>2020</td>
+<td>60-64</td>
+<td>20684.40</td>
+<td>21039.0</td>
+<td>21312.40</td>
+</tr>
 </tbody>
 </table>
 
-<p>102 rows × 5 columns</p>
+<p>153 rows × 5 columns</p>
 </div>
 </div>
 </div>
-<div id="cell-19" class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df_50thpercentile['FinishTime_hhmmss'] = pd.to_datetime(df_50thpercentile['FinishTime'], unit='s').dt.strftime('%H:%M:%S')</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> time_cols: </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    newcol <span class="op">=</span> col <span class="op">+</span> <span class="st">'_hhmmss'</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    df_50thpercentile_amateur[newcol] <span class="op">=</span> pd.to_datetime(df_50thpercentile_amateur[col], unit<span class="op">=</span><span class="st">'s'</span>).dt.strftime(<span class="st">'%H:%M:%S'</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>df_50thpercentile_amateur </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the evolution of the 50th percentile finish time over the years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg ansi-bold">~\AppData\Local\Temp\ipykernel_16916\3085472093.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      3</span> <span class="ansi-green-fg ansi-bold">for</span> col <span class="ansi-green-fg ansi-bold">in</span> time_cols<span class="ansi-yellow-fg ansi-bold">:</span>
-<span class="ansi-green-fg">      4</span>     newcol <span class="ansi-yellow-fg ansi-bold">=</span> col <span class="ansi-yellow-fg ansi-bold">+</span> <span class="ansi-blue-fg ansi-bold">'_hhmmss'</span>
-<span class="ansi-green-fg ansi-bold">----&gt; 5</span><span class="ansi-yellow-fg ansi-bold">     </span>df_50thpercentile_amateur<span class="ansi-yellow-fg ansi-bold">[</span>newcol<span class="ansi-yellow-fg ansi-bold">]</span> <span class="ansi-yellow-fg ansi-bold">=</span> pd<span class="ansi-yellow-fg ansi-bold">.</span>to_datetime<span class="ansi-yellow-fg ansi-bold">(</span>df_50thpercentile_amateur<span class="ansi-yellow-fg ansi-bold">[</span>col<span class="ansi-yellow-fg ansi-bold">]</span><span class="ansi-yellow-fg ansi-bold">,</span> unit<span class="ansi-yellow-fg ansi-bold">=</span><span class="ansi-blue-fg ansi-bold">'s'</span><span class="ansi-yellow-fg ansi-bold">)</span><span class="ansi-yellow-fg ansi-bold">.</span>dt<span class="ansi-yellow-fg ansi-bold">.</span>strftime<span class="ansi-yellow-fg ansi-bold">(</span><span class="ansi-blue-fg ansi-bold">'%H:%M:%S'</span><span class="ansi-yellow-fg ansi-bold">)</span>
-<span class="ansi-green-fg">      6</span> 
-<span class="ansi-green-fg">      7</span> df_50thpercentile_amateur
-
-<span class="ansi-red-fg ansi-bold">NameError</span>: name 'df_50thpercentile_amateur' is not defined</pre>
-</div>
-</div>
-</div>
-<div id="cell-20" class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot histogram of finish time </span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'FinishTime'</span>])</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>time_cols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-19" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>yoy_change_df <span class="op">=</span> pd.DataFrame(df_amateur_yearly_avg[<span class="st">'EventYear'</span>]).rename(columns<span class="op">=</span>{<span class="dv">0</span>:<span class="st">'EventYear'</span>}).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> [<span class="dv">50</span>,<span class="dv">65</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">95</span>]: </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    colname <span class="op">=</span> <span class="st">'FinishTime_'</span><span class="op">+</span><span class="bu">str</span>(j)<span class="op">+</span><span class="st">'_percentile'</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    yoy_change_list <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>,<span class="bu">len</span>(df_amateur_yearly_avg[<span class="st">'EventYear'</span>])):</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>        yoy_change <span class="op">=</span> (df_amateur_yearly_avg.loc[i, colname]<span class="op">/</span>df_amateur_yearly_avg.loc[i<span class="op">-</span><span class="dv">1</span>, colname]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        yoy_change_list.append(yoy_change)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    yoy_colname <span class="op">=</span> <span class="st">'yoy_change_</span><span class="sc">{}</span><span class="st">pct'</span>.<span class="bu">format</span>(j)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    yoy_change_df[yoy_colname] <span class="op">=</span> yoy_change_list</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>yoy_change_df_long <span class="op">=</span> pd.melt(yoy_change_df, id_vars<span class="op">=</span>[<span class="st">'EventYear'</span>], value_vars<span class="op">=</span>[<span class="st">'yoy_change_50pct'</span>, <span class="st">'yoy_change_65pct'</span>, <span class="st">'yoy_change_80pct'</span>, <span class="st">'yoy_change_90pct'</span>, <span class="st">'yoy_change_95pct'</span>], var_name <span class="op">=</span> <span class="st">'Average Finish Time (percentile)'</span>, value_name <span class="op">=</span> <span class="st">'YoY Change (%)'</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>yoy_change_df_long, x<span class="op">=</span><span class="st">'EventYear'</span>, y<span class="op">=</span><span class="st">'YoY Change (%)'</span>, hue<span class="op">=</span><span class="st">'Average Finish Time (percentile)'</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>legend_labels <span class="op">=</span> [<span class="st">'50th percentile'</span>, <span class="st">'65th percentile'</span>, <span class="st">'80th percentile'</span>, <span class="st">'90th percentile'</span>, <span class="st">'95th percentile'</span>]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper right'</span>, labels <span class="op">=</span> legend_labels, bbox_to_anchor <span class="op">=</span> (<span class="fl">1.35</span>,<span class="dv">1</span>))</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ironman_analyses_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="ironman_analyses_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-21" class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">##00 = professionals </span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#encoding pro status </span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Pro_status'</span>] <span class="op">=</span> df[<span class="st">'AgeGroup'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">'00'</span> <span class="cf">else</span> <span class="dv">0</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'AgeGroup'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
-<pre><code>array(['40-44', '45-49', '35-39', '50-54', '25-29', '18-24', '30-34',
-       '55-59', '00', '60-64', '70-74', '65-69', '75-79', '80-84',
-       '85-89'], dtype=object)</code></pre>
+<div id="cell-20" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_amateur_yearly_avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">EventYear</th>
+<th data-quarto-table-cell-role="th">SwimTime_100_percentile</th>
+<th data-quarto-table-cell-role="th">BikeTime_100_percentile</th>
+<th data-quarto-table-cell-role="th">RunTime_100_percentile</th>
+<th data-quarto-table-cell-role="th">FinishTime_100_percentile</th>
+<th data-quarto-table-cell-role="th">SwimTime_95_percentile</th>
+<th data-quarto-table-cell-role="th">BikeTime_95_percentile</th>
+<th data-quarto-table-cell-role="th">RunTime_95_percentile</th>
+<th data-quarto-table-cell-role="th">FinishTime_95_percentile</th>
+<th data-quarto-table-cell-role="th">SwimTime_90_percentile</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">RunTime_55_percentile</th>
+<th data-quarto-table-cell-role="th">FinishTime_55_percentile</th>
+<th data-quarto-table-cell-role="th">SwimTime_50_percentile</th>
+<th data-quarto-table-cell-role="th">BikeTime_50_percentile</th>
+<th data-quarto-table-cell-role="th">RunTime_50_percentile</th>
+<th data-quarto-table-cell-role="th">FinishTime_50_percentile</th>
+<th data-quarto-table-cell-role="th">SwimTime_45_percentile</th>
+<th data-quarto-table-cell-role="th">BikeTime_45_percentile</th>
+<th data-quarto-table-cell-role="th">RunTime_45_percentile</th>
+<th data-quarto-table-cell-role="th">FinishTime_45_percentile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">13</td>
+<td>2004</td>
+<td>1572.0</td>
+<td>8166.0</td>
+<td>4759.0</td>
+<td>14849.0</td>
+<td>1861.4</td>
+<td>8732.20</td>
+<td>5680.70</td>
+<td>16996.60</td>
+<td>1949.4</td>
+<td>...</td>
+<td>7228.90</td>
+<td>20186.90</td>
+<td>2431.0</td>
+<td>9949.0</td>
+<td>7431.0</td>
+<td>20533.0</td>
+<td>2496.0</td>
+<td>10073.4</td>
+<td>7598.1</td>
+<td>20866.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">14</td>
+<td>2005</td>
+<td>1422.0</td>
+<td>7966.0</td>
+<td>4623.0</td>
+<td>15314.0</td>
+<td>1685.0</td>
+<td>8827.45</td>
+<td>5499.90</td>
+<td>16904.80</td>
+<td>1800.9</td>
+<td>...</td>
+<td>7167.05</td>
+<td>20248.05</td>
+<td>2209.0</td>
+<td>10367.0</td>
+<td>7361.5</td>
+<td>20576.5</td>
+<td>2257.0</td>
+<td>10527.9</td>
+<td>7537.8</td>
+<td>20935.80</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">15</td>
+<td>2006</td>
+<td>1259.0</td>
+<td>7573.0</td>
+<td>4496.0</td>
+<td>14355.0</td>
+<td>1677.0</td>
+<td>8125.00</td>
+<td>5418.50</td>
+<td>15962.00</td>
+<td>1784.0</td>
+<td>...</td>
+<td>7022.00</td>
+<td>19632.50</td>
+<td>2233.0</td>
+<td>10008.0</td>
+<td>7214.0</td>
+<td>20046.0</td>
+<td>2293.0</td>
+<td>10157.0</td>
+<td>7418.5</td>
+<td>20462.50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2007</td>
+<td>1205.0</td>
+<td>7552.0</td>
+<td>4254.0</td>
+<td>14273.0</td>
+<td>1693.0</td>
+<td>8755.00</td>
+<td>5405.20</td>
+<td>16538.00</td>
+<td>1786.0</td>
+<td>...</td>
+<td>7037.00</td>
+<td>19918.80</td>
+<td>2251.0</td>
+<td>10165.0</td>
+<td>7224.0</td>
+<td>20276.0</td>
+<td>2305.0</td>
+<td>10315.0</td>
+<td>7426.2</td>
+<td>20639.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>2008</td>
+<td>1308.0</td>
+<td>7413.0</td>
+<td>4021.0</td>
+<td>14913.0</td>
+<td>1739.0</td>
+<td>8945.00</td>
+<td>5531.60</td>
+<td>17029.00</td>
+<td>1864.0</td>
+<td>...</td>
+<td>7133.00</td>
+<td>20524.40</td>
+<td>2335.0</td>
+<td>10556.0</td>
+<td>7313.0</td>
+<td>20862.0</td>
+<td>2384.0</td>
+<td>10724.8</td>
+<td>7503.8</td>
+<td>21192.80</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">16</td>
+<td>2009</td>
+<td>1214.0</td>
+<td>7373.0</td>
+<td>4182.0</td>
+<td>13895.0</td>
+<td>1584.0</td>
+<td>8387.00</td>
+<td>5401.00</td>
+<td>16233.50</td>
+<td>1685.0</td>
+<td>...</td>
+<td>7022.50</td>
+<td>19878.00</td>
+<td>2181.0</td>
+<td>10277.0</td>
+<td>7214.0</td>
+<td>20240.0</td>
+<td>2234.0</td>
+<td>10424.0</td>
+<td>7410.0</td>
+<td>20605.50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>2010</td>
+<td>1230.0</td>
+<td>6887.0</td>
+<td>4030.0</td>
+<td>14272.0</td>
+<td>1709.0</td>
+<td>8801.00</td>
+<td>5579.20</td>
+<td>16937.00</td>
+<td>1833.0</td>
+<td>...</td>
+<td>7424.00</td>
+<td>20555.00</td>
+<td>2362.0</td>
+<td>10340.0</td>
+<td>7617.0</td>
+<td>20943.0</td>
+<td>2418.0</td>
+<td>10494.2</td>
+<td>7833.2</td>
+<td>21299.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>2011</td>
+<td>1210.0</td>
+<td>7156.0</td>
+<td>4068.0</td>
+<td>14009.0</td>
+<td>1673.0</td>
+<td>8832.00</td>
+<td>5470.00</td>
+<td>16805.50</td>
+<td>1795.0</td>
+<td>...</td>
+<td>7125.00</td>
+<td>20264.00</td>
+<td>2304.0</td>
+<td>10369.0</td>
+<td>7314.0</td>
+<td>20613.0</td>
+<td>2358.0</td>
+<td>10513.0</td>
+<td>7503.0</td>
+<td>20972.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>2012</td>
+<td>1201.0</td>
+<td>6511.0</td>
+<td>4010.0</td>
+<td>13449.0</td>
+<td>1661.0</td>
+<td>8733.00</td>
+<td>5521.00</td>
+<td>16766.80</td>
+<td>1775.0</td>
+<td>...</td>
+<td>7077.00</td>
+<td>20184.20</td>
+<td>2245.0</td>
+<td>10372.0</td>
+<td>7253.0</td>
+<td>20526.0</td>
+<td>2296.0</td>
+<td>10523.0</td>
+<td>7438.0</td>
+<td>20867.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>2013</td>
+<td>1242.0</td>
+<td>6648.0</td>
+<td>4017.0</td>
+<td>14120.0</td>
+<td>1678.0</td>
+<td>8772.00</td>
+<td>5461.00</td>
+<td>16724.35</td>
+<td>1792.0</td>
+<td>...</td>
+<td>7049.00</td>
+<td>20120.00</td>
+<td>2258.0</td>
+<td>10321.0</td>
+<td>7222.0</td>
+<td>20462.5</td>
+<td>2310.0</td>
+<td>10475.0</td>
+<td>7412.0</td>
+<td>20812.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2014</td>
+<td>1201.0</td>
+<td>6825.0</td>
+<td>4062.0</td>
+<td>13979.0</td>
+<td>1614.0</td>
+<td>8758.00</td>
+<td>5440.00</td>
+<td>16635.45</td>
+<td>1752.0</td>
+<td>...</td>
+<td>7055.00</td>
+<td>20174.00</td>
+<td>2244.5</td>
+<td>10402.0</td>
+<td>7240.0</td>
+<td>20543.5</td>
+<td>2298.0</td>
+<td>10556.0</td>
+<td>7444.0</td>
+<td>20908.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2015</td>
+<td>1202.0</td>
+<td>6657.0</td>
+<td>4002.0</td>
+<td>14275.0</td>
+<td>1693.0</td>
+<td>8742.00</td>
+<td>5526.00</td>
+<td>16766.00</td>
+<td>1800.0</td>
+<td>...</td>
+<td>7118.00</td>
+<td>20200.00</td>
+<td>2256.0</td>
+<td>10316.0</td>
+<td>7297.0</td>
+<td>20558.0</td>
+<td>2309.0</td>
+<td>10470.0</td>
+<td>7490.0</td>
+<td>20915.75</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2016</td>
+<td>1201.0</td>
+<td>7417.0</td>
+<td>4033.0</td>
+<td>14112.0</td>
+<td>1663.0</td>
+<td>8709.00</td>
+<td>5478.00</td>
+<td>16665.00</td>
+<td>1784.0</td>
+<td>...</td>
+<td>7071.00</td>
+<td>20175.00</td>
+<td>2264.0</td>
+<td>10282.0</td>
+<td>7257.0</td>
+<td>20532.0</td>
+<td>2318.0</td>
+<td>10432.0</td>
+<td>7455.0</td>
+<td>20894.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2017</td>
+<td>1201.0</td>
+<td>7159.0</td>
+<td>4009.0</td>
+<td>14106.0</td>
+<td>1686.0</td>
+<td>8702.00</td>
+<td>5492.00</td>
+<td>16705.00</td>
+<td>1812.0</td>
+<td>...</td>
+<td>7094.00</td>
+<td>20171.00</td>
+<td>2283.0</td>
+<td>10283.0</td>
+<td>7279.0</td>
+<td>20528.0</td>
+<td>2334.0</td>
+<td>10436.0</td>
+<td>7474.0</td>
+<td>20888.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>2018</td>
+<td>1201.0</td>
+<td>7456.0</td>
+<td>4081.0</td>
+<td>14102.0</td>
+<td>1682.0</td>
+<td>8639.00</td>
+<td>5428.00</td>
+<td>16577.00</td>
+<td>1795.0</td>
+<td>...</td>
+<td>7001.00</td>
+<td>20059.00</td>
+<td>2262.0</td>
+<td>10262.0</td>
+<td>7173.0</td>
+<td>20417.0</td>
+<td>2315.0</td>
+<td>10419.0</td>
+<td>7360.0</td>
+<td>20781.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2019</td>
+<td>1201.0</td>
+<td>6954.0</td>
+<td>4200.0</td>
+<td>13864.0</td>
+<td>1684.0</td>
+<td>8639.00</td>
+<td>5366.00</td>
+<td>16601.45</td>
+<td>1804.0</td>
+<td>...</td>
+<td>6950.00</td>
+<td>19993.00</td>
+<td>2262.0</td>
+<td>10262.0</td>
+<td>7128.0</td>
+<td>20344.0</td>
+<td>2315.0</td>
+<td>10416.0</td>
+<td>7322.0</td>
+<td>20702.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2020</td>
+<td>1288.0</td>
+<td>7067.0</td>
+<td>4384.0</td>
+<td>13900.0</td>
+<td>1680.0</td>
+<td>8407.00</td>
+<td>5346.95</td>
+<td>16172.95</td>
+<td>1770.0</td>
+<td>...</td>
+<td>6825.00</td>
+<td>19530.55</td>
+<td>2199.0</td>
+<td>10031.0</td>
+<td>6999.0</td>
+<td>19877.5</td>
+<td>2250.0</td>
+<td>10174.0</td>
+<td>7182.0</td>
+<td>20267.45</td>
+</tr>
+</tbody>
+</table>
+
+<p>17 rows × 49 columns</p>
 </div>
 </div>
-<div id="cell-22" class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>finishers_yeargrp <span class="op">=</span> df[[<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>, <span class="st">'count'</span>]].groupby([<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>]).<span class="bu">sum</span>().reset_index()</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>yeargrp <span class="op">=</span> df[[<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>, <span class="st">'count'</span>]].groupby([<span class="st">'EventYear'</span>]).<span class="bu">sum</span>().reset_index() </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>yeargrp[<span class="st">'Gender'</span>] <span class="op">=</span> <span class="st">'Total'</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>finishers_yeargrp <span class="op">=</span> pd.concat([finishers_yeargrp, yeargrp]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-21" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>finishers_yearly <span class="op">=</span> df_amateur.groupby(<span class="st">'EventYear'</span>)[<span class="st">'count'</span>].<span class="bu">sum</span>().reset_index()</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>yoy_change_df[<span class="st">'total_finishers'</span>] <span class="op">=</span> finishers_yearly[<span class="st">'count'</span>]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>yoy_change_df</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#plot regression line for each percentile vs event year </span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr, linregress</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>finish_percentile_col <span class="op">=</span> [<span class="st">'FinishTime_50_percentile'</span>, <span class="st">'FinishTime_65_percentile'</span>, <span class="st">'FinishTime_80_percentile'</span>, <span class="st">'FinishTime_90_percentile'</span>, <span class="st">'FinishTime_95_percentile'</span>]</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">#calculate correlation coefficient for each percentile</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>df_eventyear_finish_corr <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> finish_percentile_col: </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    pro_corr <span class="op">=</span> pearsonr(df_pro_yearly_avg[<span class="st">'EventYear'</span>], df_pro_yearly_avg[col])</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    amateur_corr <span class="op">=</span> pearsonr(df_amateur_yearly_avg[<span class="st">'EventYear'</span>], df_amateur_yearly_avg[col])</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    pro_results <span class="op">=</span> (pro_corr[<span class="dv">0</span>], pro_corr[<span class="dv">1</span>])</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    amateur_results <span class="op">=</span> (amateur_corr[<span class="dv">0</span>], amateur_corr[<span class="dv">1</span>])</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    df_eventyear_finish_corr <span class="op">=</span> df_eventyear_finish_corr.append({<span class="st">'Percentile'</span>:col, <span class="st">'R Value (Pro)'</span>:pro_results[<span class="dv">0</span>], <span class="st">'P-Value (Pro)'</span>:pro_results[<span class="dv">1</span>], <span class="st">'R Value (Amateur)'</span>:amateur_results[<span class="dv">0</span>], <span class="st">'P-Value (Amateur)'</span>:amateur_results[<span class="dv">1</span>]}, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(df_eventyear_finish_corr))</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="co">#plot regression line for each avg percentile against event years </span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: left;">Percentile</th>
+<th style="text-align: right;">R Value (Pro)</th>
+<th style="text-align: right;">P-Value (Pro)</th>
+<th style="text-align: right;">R Value (Amateur)</th>
+<th style="text-align: right;">P-Value (Amateur)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">FinishTime_50_percentile</td>
+<td style="text-align: right;">-0.705056</td>
+<td style="text-align: right;">0.00157193</td>
+<td style="text-align: right;">-0.224363</td>
+<td style="text-align: right;">0.386641</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FinishTime_65_percentile</td>
+<td style="text-align: right;">-0.720402</td>
+<td style="text-align: right;">0.00110658</td>
+<td style="text-align: right;">-0.173852</td>
+<td style="text-align: right;">0.504567</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">FinishTime_80_percentile</td>
+<td style="text-align: right;">-0.737097</td>
+<td style="text-align: right;">0.000735811</td>
+<td style="text-align: right;">-0.109345</td>
+<td style="text-align: right;">0.676126</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">FinishTime_90_percentile</td>
+<td style="text-align: right;">-0.724633</td>
+<td style="text-align: right;">0.00100056</td>
+<td style="text-align: right;">-0.115874</td>
+<td style="text-align: right;">0.657861</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">FinishTime_95_percentile</td>
+<td style="text-align: right;">-0.720559</td>
+<td style="text-align: right;">0.00110249</td>
+<td style="text-align: right;">-0.200382</td>
+<td style="text-align: right;">0.440627</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="cell-22" class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_eventyear_finish_corr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Percentile</th>
+<th data-quarto-table-cell-role="th">R Value (Pro)</th>
+<th data-quarto-table-cell-role="th">P-Value (Pro)</th>
+<th data-quarto-table-cell-role="th">R Value (Amateur)</th>
+<th data-quarto-table-cell-role="th">P-Value (Amateur)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>FinishTime_50_percentile</td>
+<td>-0.705056</td>
+<td>0.001572</td>
+<td>-0.224363</td>
+<td>0.386641</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>FinishTime_65_percentile</td>
+<td>-0.720402</td>
+<td>0.001107</td>
+<td>-0.173852</td>
+<td>0.504567</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>FinishTime_80_percentile</td>
+<td>-0.737097</td>
+<td>0.000736</td>
+<td>-0.109345</td>
+<td>0.676126</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>FinishTime_90_percentile</td>
+<td>-0.724633</td>
+<td>0.001001</td>
+<td>-0.115874</td>
+<td>0.657861</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>FinishTime_95_percentile</td>
+<td>-0.720559</td>
+<td>0.001102</td>
+<td>-0.200382</td>
+<td>0.440627</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 <div id="cell-23" class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot number of finishers by year </span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"darkgrid"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>finisher_countplt <span class="op">=</span> sns.lineplot(data<span class="op">=</span>finishers_yeargrp, x<span class="op">=</span><span class="st">'EventYear'</span>, y<span class="op">=</span><span class="st">'count'</span>, hue<span class="op">=</span><span class="st">'Gender'</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>finisher_countplt.<span class="bu">set</span>(title<span class="op">=</span><span class="st">'Number of Finishers by Year'</span>, xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Number of Finishers'</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatting y-axis</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>finisher_countplt.get_yaxis().set_major_formatter(mpl.ticker.StrMethodFormatter(<span class="st">'</span><span class="sc">{x:,.0f}</span><span class="st">'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot histogram of finish time </span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'FinishTime'</span>])</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>time_cols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1282,7 +1809,41 @@ The above exception was the direct cause of the following exception:
 </div>
 </div>
 <div id="cell-24" class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#figure out the age</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">##00 = professionals </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#encoding pro status </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Pro_status'</span>] <span class="op">=</span> df[<span class="st">'AgeGroup'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="dv">1</span> <span class="cf">if</span> x <span class="op">==</span> <span class="st">'00'</span> <span class="cf">else</span> <span class="dv">0</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'AgeGroup'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>array(['40-44', '45-49', '35-39', '50-54', '25-29', '18-24', '30-34',
+       '55-59', '00', '60-64', '70-74', '65-69', '75-79', '80-84',
+       '85-89'], dtype=object)</code></pre>
+</div>
+</div>
+<div id="cell-25" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>finishers_yeargrp <span class="op">=</span> df[[<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>, <span class="st">'count'</span>]].groupby([<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>]).<span class="bu">sum</span>().reset_index()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>yeargrp <span class="op">=</span> df[[<span class="st">'EventYear'</span>, <span class="st">'Gender'</span>, <span class="st">'count'</span>]].groupby([<span class="st">'EventYear'</span>]).<span class="bu">sum</span>().reset_index() </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>yeargrp[<span class="st">'Gender'</span>] <span class="op">=</span> <span class="st">'Total'</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>finishers_yeargrp <span class="op">=</span> pd.concat([finishers_yeargrp, yeargrp]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-26" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot number of finishers by year </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"darkgrid"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>finisher_countplt <span class="op">=</span> sns.lineplot(data<span class="op">=</span>finishers_yeargrp, x<span class="op">=</span><span class="st">'EventYear'</span>, y<span class="op">=</span><span class="st">'count'</span>, hue<span class="op">=</span><span class="st">'Gender'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>finisher_countplt.<span class="bu">set</span>(title<span class="op">=</span><span class="st">'Number of Finishers by Year'</span>, xlabel<span class="op">=</span><span class="st">'Year'</span>, ylabel<span class="op">=</span><span class="st">'Number of Finishers'</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatting y-axis</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>finisher_countplt.get_yaxis().set_major_formatter(mpl.ticker.StrMethodFormatter(<span class="st">'</span><span class="sc">{x:,.0f}</span><span class="st">'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ironman_analyses_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-27" class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#figure out the age</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
