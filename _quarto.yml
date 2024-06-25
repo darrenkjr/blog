@@ -16,6 +16,8 @@ format:
     css: styles.css
     toc: true
     page-layout: full
+    grid: 
+      margin-width: 300px
 
 
 
