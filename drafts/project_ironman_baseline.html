@@ -44,7 +44,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -96,6 +96,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-808E5KN2L2', { 'anonymize_ip': true});
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -190,11 +193,12 @@ gtag('config', 'G-808E5KN2L2', { 'anonymize_ip': true});
 <p>So I’ve been in a bit of a situationship with my fitness for a long time. Grew up chubby, a sore spot I used to hold, though I wouldn’t say I was particularly sedentary <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. However, it’s only been in the past 8 years that I’ve been <em>intentional</em> with how I saw my fitness.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Maybe just a bit too keen on my curries and laksas. No regrets.</p></div><div id="fn2"><p><sup>2</sup>&nbsp;A story for another day, but it was fun and I’d do it again… maybe with a bit more of an injury-free leadup</p></div></div><p>And so, since 2018, I’ve made it a point to run a half marathon every year, interspersed with powerlifting style training. Over time, this led me to doing a full marathon last year at the 2023 Sydney Marathon. It was a bit of a dismal showing really, and looking back, my training, commitment, nutrition, and consistency could have been improved <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>The problem I’ve identified is consistency. The general cycle I’ve noticed is that I would train pretty consistently for an event in the leadup, I’d get sick or life would get in the way and I’d take breaks that would last for up to 2 months. I’d jump back in, get a niggle, and would end up sputtering to the starting line, with not enough miles in my legs. I’d reach the event, finish it, and I’d resolve to not do it again. Then, inevitably, I’d catch the bug again, start training, but always seemingly from the same baseline, and so year-on-year, improvements would come few and far between.</p>
-<p>The thing is, I’ve caught the bug again, and so I find myself wishing complete a full Ironman sometime before I die. I’ve got plenty of life left to live, but I’d prefer to complete one in a respectable way <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, within my physical prime. But what does this even mean?</p>
+<p>The thing is, I’ve caught the bug again, and so I find myself wishing complete an Ironman sometime before I die. I’ve got plenty of life left to live, but I’d prefer to complete one in a respectable way <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, within my physical prime. But what does this even mean?</p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Be above average, at the very least.</p></div></div><section id="now-this-is-average-performance" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="now-this-is-average-performance">Now <em>This</em> Is Average Performance</h2>
 <p>It’s obvious that <em>peak performance</em> depends on the event you’re looking at. Things that require explosive power have a younger peak performance age, relative to things that require endurance, acquired knowledge and/or skill <span class="citation" data-cites="stiefel2013">(<a href="#ref-stiefel2013" role="doc-biblioref">Stiefel et al. 2013</a>)</span>. Then again, there is the added confounder of training age, ie: how long you’ve been intentionally training over your lifetime. From a purely physiological development perspective though, I do think that there is a inflection point after which things start going downhill. I admit to a certain amount of anxiety when it comes to this, so in that sense, time (and youth) is of the essence.</p>
-<p>Thankfully, I’ve managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020. 16 years of data! <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and it seems that the triathlon bug is hitting, and hitting good. Ironman 70.3 Triathlons are now big business, with 1572 finishers in 2004, up to a peak of 116,196 in 2019 (<a href="#fig-finishercount" class="quarto-xref">Figure&nbsp;1</a>), though I’d attribute the dip in 2020 to Covid.</p>
+<p>Thankfully, I’ve managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020. Granted these are <strong>Half Ironman</strong> results, so not at all comparable to the full Ironman, and the demands on the body will be definitely different between the two. But in any case, the Half Ironman is a stepping stone to the full, so I figure I might as well focus on the Ironman 70.3 in the near to mid term first.</p>
+<p>In any case, this is 16 years of data! <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, and it seems that the triathlon bug is hitting, and hitting good. Ironman 70.3 Triathlons are now big business, with 1572 finishers in 2004, up to a peak of 116,196 in 2019 (<a href="#fig-finishercount" class="quarto-xref">Figure&nbsp;1</a>), though I’d attribute the dip in 2020 to Covid.</p>
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Shoutout to David who painstakingly compiled and cleaned the data available <a href="https://www.kaggle.com/datasets/aiaiaidavid/ironman-703-race-data-between-2004-and-2020?resource=download">here</a></p></div></div><div id="cell-fig-finishercount" class="cell page-columns page-full" data-execution_count="1">
 <div class="cell-output cell-output-display page-columns page-full">
 <div id="fig-finishercount" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
@@ -289,36 +293,67 @@ Table&nbsp;1: Correlation analysis between Event Years, and Total Finish Times a
 </figure>
 </div>
 </div>
-<p>But then again, I have no ambitions at the moment for ever becoming elite in any age-group, nor going pro for that matter. However, I don’t wish to just <em>finish</em>. What this data is telling me then is that we’ve got some reasonably stable benchmarks (<a href="#tbl-finishtimepct_benchmarks" class="quarto-xref">Table&nbsp;2</a>) that will hold steady for quite a while yet.</p>
+<p>But then again, I have no ambitions at the moment for ever becoming elite in any age-group, nor going pro for that matter. However, I don’t wish to just <em>finish</em>. What this data is telling me then is that we’ve got some reasonably stable benchmarks (<a href="#tbl-finishtimepct_benchmarks" class="quarto-xref">Table&nbsp;2</a>) that will hold steady for quite a while yet. Out of all of these, the running benchmarks seem to be the most reasonable. Though keep in mind that running is the last event of the triathlon, so you’re going to be running on tired legs, after an average of 2.5 hours of hard cycling. In isolation though, it does <em>seem</em> to be in the realm of possibility.</p>
 <div class="cell page-columns page-full" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>['FinishTime_50_percentile', 'FinishTime_65_percentile', 'FinishTime_80_percentile', 'FinishTime_90_percentile', 'FinishTime_95_percentile', 'SwimTime_50_percentile', 'SwimTime_65_percentile', 'SwimTime_80_percentile', 'SwimTime_90_percentile', 'SwimTime_95_percentile', 'BikeTime_50_percentile', 'BikeTime_65_percentile', 'BikeTime_80_percentile', 'BikeTime_90_percentile', 'BikeTime_95_percentile', 'RunTime_50_percentile', 'RunTime_65_percentile', 'RunTime_80_percentile', 'RunTime_90_percentile', 'RunTime_95_percentile']</code></pre>
-</div>
 <div id="tbl-finishtimepct_benchmarks" class="cell quarto-float quarto-figure quarto-figure-center anchored page-columns page-full" data-execution_count="5">
 <figure class="quarto-float quarto-float-tbl figure page-columns page-full">
 <div aria-describedby="tbl-finishtimepct_benchmarks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>FinishTime_50_percentile    05:41:03 ± 00:04:19
-FinishTime_65_percentile    05:23:15 ± 00:04:46
-FinishTime_80_percentile    05:04:05 ± 00:05:03
-FinishTime_90_percentile    04:48:30 ± 00:04:53
-FinishTime_95_percentile    04:37:28 ± 00:04:52
-SwimTime_50_percentile      00:37:49 ± 00:01:01
-SwimTime_65_percentile      00:35:15 ± 00:00:57
-SwimTime_80_percentile      00:32:28 ± 00:00:55
-SwimTime_90_percentile      00:29:58 ± 00:00:53
-SwimTime_95_percentile      00:28:06 ± 00:00:56
-BikeTime_50_percentile      02:51:08 ± 00:02:33
-BikeTime_65_percentile      02:43:53 ± 00:02:31
-BikeTime_80_percentile      02:36:06 ± 00:02:36
-BikeTime_90_percentile      02:29:26 ± 00:02:53
-BikeTime_95_percentile      02:24:36 ± 00:03:18
-RunTime_50_percentile       02:01:06 ± 00:02:10
-RunTime_65_percentile       01:52:07 ± 00:01:50
-RunTime_80_percentile       01:43:09 ± 00:01:40
-RunTime_90_percentile       01:36:04 ± 00:01:24
-RunTime_95_percentile       01:31:13 ± 00:01:21
-dtype: object</code></pre>
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="5">
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Benchmark</th>
+<th style="text-align: left;">BikeTime</th>
+<th style="text-align: left;">FinishTime</th>
+<th style="text-align: left;">RunTime</th>
+<th style="text-align: left;">SwimTime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Average (50th Percentile)</td>
+<td style="text-align: left;">02:51:08 ± 00:02:33</td>
+<td style="text-align: left;">05:41:03 ± 00:04:19</td>
+<td style="text-align: left;">02:01:06 ± 00:02:10</td>
+<td style="text-align: left;">00:37:49 ± 00:01:01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Above Average (65th Percentile)</td>
+<td style="text-align: left;">02:43:53 ± 00:02:31</td>
+<td style="text-align: left;">05:23:15 ± 00:04:46</td>
+<td style="text-align: left;">01:52:07 ± 00:01:50</td>
+<td style="text-align: left;">00:35:15 ± 00:00:57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Intermediate (80th Percentile)</td>
+<td style="text-align: left;">02:36:06 ± 00:02:36</td>
+<td style="text-align: left;">05:04:05 ± 00:05:03</td>
+<td style="text-align: left;">01:43:09 ± 00:01:40</td>
+<td style="text-align: left;">00:32:28 ± 00:00:55</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Advanced (90th Percentile)</td>
+<td style="text-align: left;">02:29:26 ± 00:02:53</td>
+<td style="text-align: left;">04:48:30 ± 00:04:53</td>
+<td style="text-align: left;">01:36:04 ± 00:01:24</td>
+<td style="text-align: left;">00:29:58 ± 00:00:53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Elite (95th Percentile)</td>
+<td style="text-align: left;">02:24:36 ± 00:03:18</td>
+<td style="text-align: left;">04:37:28 ± 00:04:52</td>
+<td style="text-align: left;">01:31:13 ± 00:01:21</td>
+<td style="text-align: left;">00:28:06 ± 00:00:56</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-tbl margin-caption" id="tbl-finishtimepct_benchmarks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -330,6 +365,331 @@ Table&nbsp;2: Completely Arbitrary Benchmark Finish Times at various performance
 </section>
 <section id="age-groups-and-performance-how-long-do-i-have-at-my-theoretical-peak" class="level2">
 <h2 class="anchored" data-anchor-id="age-groups-and-performance-how-long-do-i-have-at-my-theoretical-peak">Age Groups and Performance, How Long Do I Have At My Theoretical Peak?</h2>
+<p>Alright, we now know what seems to be a reasonable enough time to finish an Ironman 70.3 across <em>all age groups</em>. But does age matter at all? Do i have all the time in the world to train for this if my goal is to just be above average?</p>
+<div id="a651482a" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="6">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">18-24</th>
+<th style="text-align: right;">25-29</th>
+<th style="text-align: right;">30-34</th>
+<th style="text-align: right;">35-39</th>
+<th style="text-align: right;">40-44</th>
+<th style="text-align: right;">45-49</th>
+<th style="text-align: right;">50-54</th>
+<th style="text-align: right;">55-59</th>
+<th style="text-align: right;">60-64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">17.74</td>
+<td style="text-align: right;">24.3</td>
+<td style="text-align: right;">22.57</td>
+<td style="text-align: right;">15.91</td>
+<td style="text-align: right;">8.54</td>
+<td style="text-align: right;">2.94</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.91</td>
+<td style="text-align: right;">13.05</td>
+<td style="text-align: right;">20.32</td>
+<td style="text-align: right;">22.66</td>
+<td style="text-align: right;">19.4</td>
+<td style="text-align: right;">12.31</td>
+<td style="text-align: right;">5.57</td>
+<td style="text-align: right;">1.58</td>
+<td style="text-align: right;">0.21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.06</td>
+<td style="text-align: right;">10.81</td>
+<td style="text-align: right;">18.05</td>
+<td style="text-align: right;">21.7</td>
+<td style="text-align: right;">20.44</td>
+<td style="text-align: right;">14.17</td>
+<td style="text-align: right;">7.57</td>
+<td style="text-align: right;">2.67</td>
+<td style="text-align: right;">0.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.53</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">20.47</td>
+<td style="text-align: right;">20.63</td>
+<td style="text-align: right;">15.09</td>
+<td style="text-align: right;">8.77</td>
+<td style="text-align: right;">3.68</td>
+<td style="text-align: right;">1.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3.28</td>
+<td style="text-align: right;">9.33</td>
+<td style="text-align: right;">16.09</td>
+<td style="text-align: right;">20.16</td>
+<td style="text-align: right;">20.54</td>
+<td style="text-align: right;">15.49</td>
+<td style="text-align: right;">9.36</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">1.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">9.29</td>
+<td style="text-align: right;">14.98</td>
+<td style="text-align: right;">18.83</td>
+<td style="text-align: right;">19.9</td>
+<td style="text-align: right;">15.75</td>
+<td style="text-align: right;">10.23</td>
+<td style="text-align: right;">5.44</td>
+<td style="text-align: right;">2.43</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="448abde4" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+<th data-quarto-table-cell-role="th">Performance_category</th>
+<th data-quarto-table-cell-role="th">18-24</th>
+<th data-quarto-table-cell-role="th">25-29</th>
+<th data-quarto-table-cell-role="th">30-34</th>
+<th data-quarto-table-cell-role="th">35-39</th>
+<th data-quarto-table-cell-role="th">40-44</th>
+<th data-quarto-table-cell-role="th">45-49</th>
+<th data-quarto-table-cell-role="th">50-54</th>
+<th data-quarto-table-cell-role="th">55-59</th>
+<th data-quarto-table-cell-role="th">60-64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Elite</td>
+<td>2346</td>
+<td>5552</td>
+<td>7604</td>
+<td>7063</td>
+<td>4978</td>
+<td>2671</td>
+<td>921</td>
+<td>135</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Advanced</td>
+<td>1534</td>
+<td>4079</td>
+<td>6351</td>
+<td>7083</td>
+<td>6065</td>
+<td>3847</td>
+<td>1740</td>
+<td>493</td>
+<td>67</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Intermediate</td>
+<td>2540</td>
+<td>6760</td>
+<td>11285</td>
+<td>13564</td>
+<td>12774</td>
+<td>8857</td>
+<td>4733</td>
+<td>1670</td>
+<td>327</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Above Average</td>
+<td>3304</td>
+<td>9352</td>
+<td>15693</td>
+<td>19157</td>
+<td>19303</td>
+<td>14119</td>
+<td>8203</td>
+<td>3447</td>
+<td>987</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Average</td>
+<td>3063</td>
+<td>8719</td>
+<td>15031</td>
+<td>18838</td>
+<td>19191</td>
+<td>14476</td>
+<td>8747</td>
+<td>3923</td>
+<td>1453</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Below Average</td>
+<td>9697</td>
+<td>28631</td>
+<td>46163</td>
+<td>58024</td>
+<td>61348</td>
+<td>48553</td>
+<td>31536</td>
+<td>16780</td>
+<td>7480</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="7a8de7f5" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-stdout">
+<pre><code>Optimization terminated successfully.
+         Current function value: 1.444029
+         Iterations 9</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">AgeGroup</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.166667</td>
+<td>0.166667</td>
+<td>0.166667</td>
+<td>0.166667</td>
+<td>0.166667</td>
+<td>0.166667</td>
+<td>18-24</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.087997</td>
+<td>0.064651</td>
+<td>0.107143</td>
+<td>0.148226</td>
+<td>0.138193</td>
+<td>0.453790</td>
+<td>25-29</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.074456</td>
+<td>0.062187</td>
+<td>0.110500</td>
+<td>0.153662</td>
+<td>0.147179</td>
+<td>0.452016</td>
+<td>30-34</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.057084</td>
+<td>0.057246</td>
+<td>0.109627</td>
+<td>0.154830</td>
+<td>0.152252</td>
+<td>0.468960</td>
+<td>35-39</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.040256</td>
+<td>0.049046</td>
+<td>0.103300</td>
+<td>0.156099</td>
+<td>0.155193</td>
+<td>0.496106</td>
+<td>40-44</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0.028868</td>
+<td>0.041579</td>
+<td>0.095728</td>
+<td>0.152600</td>
+<td>0.156458</td>
+<td>0.524767</td>
+<td>45-49</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0.016482</td>
+<td>0.031138</td>
+<td>0.084699</td>
+<td>0.146797</td>
+<td>0.156532</td>
+<td>0.564352</td>
+<td>50-54</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>0.005104</td>
+<td>0.018640</td>
+<td>0.063143</td>
+<td>0.130331</td>
+<td>0.148329</td>
+<td>0.634453</td>
+<td>55-59</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>0.001742</td>
+<td>0.006485</td>
+<td>0.031649</td>
+<td>0.095528</td>
+<td>0.140631</td>
+<td>0.723964</td>
+<td>60-64</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
 <section id="my-current-baseline" class="level2">
 <h2 class="anchored" data-anchor-id="my-current-baseline">My Current Baseline</h2>
