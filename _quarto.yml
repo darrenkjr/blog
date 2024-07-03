@@ -12,7 +12,8 @@ website:
         text: Home
       - href: blog_listing.qmd
         text: Blog 
-  google-analytics: G-808E5KN2L2
+  google-analytics: 
+    tracking-id: G-808E5KN2L2
   
 format:
   html:
