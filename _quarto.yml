@@ -13,8 +13,7 @@ website:
       - href: blog_listing.qmd
         text: Blog 
   google-analytics: G-808E5KN2L2
-    storage: none
-
+  
 format:
   html:
     theme: cosmo
