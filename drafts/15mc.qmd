@@ -1,0 +1,38 @@
+---
+date: last-modified
+date-format: "DD MMMM, YYYY"
+title: 15 Minute Cities and Conspiracy Theory
+author: Darren Rajit
+format: 
+    html: 
+        code-fold: true
+categories: [General, urbanism]
+reference-location: margin
+fig-cap-location: margin
+---
+
+::: callout-note
+**Statement of Bias** : As of 10th June 2024, I don't drive, come from a middle class family, generally progressive in my politics, and am mostly able-bodied.[^1] I invite you to read on with these qualifiers in mind.
+:::
+
+[^1]: I have multiple sclerosis, and there will probably be a time where a cane is my preferred mode of transport, but that's a story for [another day.](https://darrenkjr.medium.com/multiple-sclerosis-me-loss-grief-renewal-d9dd0ffbe20a)
+
+A few days ago, this popped up on my twitter feed: 
+
+
+15 minute cities were *hot* topic in 2023, and while the hoopla has calmed down somewhat, I've been marinating on its implications for a while. Late last year, I received a flyer in my mailbox decrying council plans in my neighbourhood for this very of model of development [^2], with links to videos featuring scary-sounding phrases like "surveillance state", "climate lockdowns", and *gasp* the "World Economic Forum". My poor council had to issue a follow up press statement on this [soon after](https://www.monash.vic.gov.au/About-Us/News/Misinformation-on-20-minute-neighbourhoods), but I've been puzzling why such an innocuous concept such as designing neighbourhoods where the things you need are *close by* (in this case, within 15 - 20 minutes by foot or bike), could be so controversial? 
+
+::: {.column-margin} 
+![20 Minute Neighbourhood Flyer](..\images\15mc_leaflet.jpg){height="20%"}
+:::
+
+
+[^2]: The New South Wales Government operates off of 15 minutes, whereas Victoria, 20 minutes. Same model of development however. 
+
+To what end? Try as I might, I've been unable to find a coherent answer.
+
+## Deconstructing the City : Chrono Urbanism and the Rise of 15 Minute Cities
+
+Definition:
+
+![15-minute Radii by various mode of transportation. Image [source](https://www.cnu.org/publicsquare/2021/02/08/defining-15-minute-city)](..\images\3a-15-minute-dpz.jpg)
