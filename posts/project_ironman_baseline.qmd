@@ -79,9 +79,9 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-Interestingly, age distributions among **male amateurs of working age** have started to stabilize over the past half decade. Funnily, it seems that doing a triathlon may come hand in hand with having a midlife crisis. Since 2013, almost 40% of finishers have been aged between 35 and 44 (@fig-finisheragedist), with the 18-24 and 60-64 age groups being on the lower end of the working age distribution. 
+Interestingly, age distributions among **male amateurs of working age** have started to stabilize over the past half decade. It seems that doing a triathlon may come hand in hand with having a midlife crisis (guilty as charged). Since 2013, almost 40% of finishers have been aged between 35 and 44 (@fig-finisheragedist), with the 18-24 and 60-64 age groups being on the lower end of the working age distribution. 
 
-Personally, I'd rack this up to the fact that triathlons are both an *expensive* **and** *intensive* sport, probably acessible only to the young uns who can afford it (and have the resources to train for it), and the older ones who've probably had a lifetime worth of training to stand up to the rigous of the sport.
+Personally, I'd rack this up to the fact that triathlons are both an *expensive* **and** *intensive* sport, probably accessible only to the young uns who can afford it (and have the resources to train for it), and the older ones who've probably had a lifetime worth of training to stand up to the rigous of the sport.
 
 ```{python}
 #| fig-cap: Age Distribution of Ironman 70.3 Finishers, Male Age Groupers only
@@ -134,9 +134,9 @@ plt.show()
 
 ```
 
-The thing is, with participation higher than ever before excepting the blip in 2020 (@fig-finishercount), you'd think the overall standard would have increased. Interestingly, not exactly. At first glance, you'd see a raft of improvements from 2004 to 2010, followed by what seems to be a plateau in average (ie: 50th percentile) performance, across all disciplines [^5]. 
+The thing is, with participation higher than ever before, excepting the blip in 2020 (@fig-finishercount), you'd think the overall standard would have increased. Interestingly, not exactly. At first glance, you'd see a raft of improvements from 2004 to 2010, followed by what seems to be a plateau in average (ie: 50th percentile) performance, across all disciplines [^5]. 
 
-It seems w'ere now in the age of slow, marginal level improvements. (@fig-averagefinishtimes) [^6]. We can probably attribute this to the fact that as more people get involved with the Ironman 70.3, a whole initial raft of enthusiasts would have lead to initial improvements over time, but as the late majority joined the sport, what we now see is a gradul regresson to the mean. This seems to be especially the case for us amateurs, but something else seems to be happening with the pros...
+It seems we're now in the age of slow, marginal level improvements. (@fig-averagefinishtimes) [^6]. We can probably attribute this to the fact that as more people get involved with the Ironman 70.3, an initial raft of enthusiasts would have lead to initial improvements over time, but as the late majority joined the sport, what we now see is a gradul regression to the mean. This seems to be especially the case for us amateurs, but something else seems to be happening with the pros...
 
 [^5]: excepting 2020
 
@@ -383,7 +383,7 @@ Out of all of these, the running benchmarks seem to be the most reasonable. Thou
 
 ## My Current Baseline
 
-As of writing (12th June 2024), I am 29 years old, and stand at 174 cm (5'9") at a slightly tubby 77kg. As of 5th November 2024, I've committed to an Olympic Tri on the 23rd of March 2025, 5 days befire I turn 30. Ironman 70.3 Melbourne after that is on the 9th November 2025. Giving me exactly a year to train. 
+As of writing (12th June 2024), I am 29 years old, and stand at 174 cm (5'9") at a slightly tubby 77kg. As of 5th November 2024, I've committed to an Olympic Tri on the 23rd of March 2025, 5 days before I turn 30. Ironman 70.3 Melbourne after that is on the 9th November 2025. Giving me exactly a year to train. 
 
 * My Half Marathon Lifetime PR (set last year while I was training for the Sydney Mara) is 1:49
 * The last time I swam consistently was when I was 14 
