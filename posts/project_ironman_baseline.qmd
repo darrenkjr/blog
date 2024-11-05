@@ -31,7 +31,9 @@ The thing is, I've caught the bug again, and so I find myself wishing complete a
 
 It's obvious that *peak performance* depends on the event you're looking at. Things that require explosive power have a younger peak performance age, relative to things that require endurance, acquired knowledge and/or skill [@stiefel2013]. Then again, there is the added confounder of training age, ie: how long you've been intentionally training over your lifetime. From a purely physiological development perspective though, I do think that there is a inflection point after which things start going downhill. I admit to a certain amount of anxiety when it comes to this, so in that sense, time (and youth) is of the essence.
 
-Thankfully, I've managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020.  Granted these are **Half Ironman** results, so not at all comparable to the full Ironman, and the demands on the body will be definitely different between the two. But in any case, the Half Ironman is a stepping stone to the full, so I figure I might as well focus on the Ironman 70.3 in the near to mid term first. **That's a 1.9km Swim, 90km bike ride, and a 21.1km run**. 
+Thankfully, I've managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020.  Granted these are **Half Ironman** results, so not at all comparable to the full Ironman, and the demands on the body will be definitely different between the two. 
+
+But - the Half Ironman is a stepping stone to the full, so I figure I might as well focus on the Ironman 70.3 in the near to mid term first. **That's a 1.9km Swim, 90km bike ride, and a 21.1km run**. 
 
 In any case, this is 16 years of data! [^4], and it seems that the triathlon bug is hitting, and hitting good. Ironman 70.3 Triathlons are now big business, with 1572 finishers in 2004, up to a peak of 116,196 in 2019 (@fig-finishercount), though I'd attribute the dip in 2020 to Covid.
 
@@ -77,7 +79,9 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-Interestingly, age distributions among **male amateurs of working age** have started to stabilize over the past half decade. Funnily, it seems that doing a triathlon may come hand in hand with having a midlife crisis. Since 2013, almost 40% of finishers have been aged between 35 and 44 (@fig-finisheragedist), with the 18-24 and 60-64 age groups being on the lower end of the working age distribution. Personally, I'd rack this up to the fact that triathlons are both an *expensive* **and** *intensive* sport, probably acessible only to the young uns who can afford it (and have the resources to train for it), and the older ones who've probably had a lifetime worth of training to stand up to the rigous of the sport.
+Interestingly, age distributions among **male amateurs of working age** have started to stabilize over the past half decade. Funnily, it seems that doing a triathlon may come hand in hand with having a midlife crisis. Since 2013, almost 40% of finishers have been aged between 35 and 44 (@fig-finisheragedist), with the 18-24 and 60-64 age groups being on the lower end of the working age distribution. 
+
+Personally, I'd rack this up to the fact that triathlons are both an *expensive* **and** *intensive* sport, probably acessible only to the young uns who can afford it (and have the resources to train for it), and the older ones who've probably had a lifetime worth of training to stand up to the rigous of the sport.
 
 ```{python}
 #| fig-cap: Age Distribution of Ironman 70.3 Finishers, Male Age Groupers only
@@ -130,7 +134,9 @@ plt.show()
 
 ```
 
-The thing is, with participation higher than ever before excepting the blip in 2020 (@fig-finishercount), you'd think the overall standard would have increased. Interestingly, not exactly. At first glance, you'd see a raft of improvements from 2004 to 2010, followed by what seems to be a plateau in average (ie: 50th percentile) performance, across all disciplines [^5]. And so it seems w'ere now in the age of slow, marginal level improvements. (@fig-averagefinishtimes) [^6]. We can probably attribute this to the fact that as more people get involved with the Ironman 70.3, a whole initial raft of enthusiasts would have lead to initial improvements over time, but as the late majority joined the sport, what we know see is a gradul regresson to the mean. This seems to be especially the case for us amateurs, but something else seems to be happening with the pros...
+The thing is, with participation higher than ever before excepting the blip in 2020 (@fig-finishercount), you'd think the overall standard would have increased. Interestingly, not exactly. At first glance, you'd see a raft of improvements from 2004 to 2010, followed by what seems to be a plateau in average (ie: 50th percentile) performance, across all disciplines [^5]. 
+
+It seems w'ere now in the age of slow, marginal level improvements. (@fig-averagefinishtimes) [^6]. We can probably attribute this to the fact that as more people get involved with the Ironman 70.3, a whole initial raft of enthusiasts would have lead to initial improvements over time, but as the late majority joined the sport, what we now see is a gradul regresson to the mean. This seems to be especially the case for us amateurs, but something else seems to be happening with the pros...
 
 [^5]: excepting 2020
 
@@ -272,7 +278,7 @@ Markdown(tabulate(df_eventyear_finish_corr, headers = 'keys', tablefmt = 'pipe',
 
 ```
 
-## Benchmark Setting
+## Benchmark Setting - Ironman 70.3
 
 But then again, I have no ambitions at the moment for ever becoming elite in any age-group, nor going pro for that matter. However, I don't wish to just *finish*. What this data is telling me then is that we've got some reasonably stable benchmarks (@tbl-finishtimepct_benchmarks) that will hold steady for quite a while yet. 
 
