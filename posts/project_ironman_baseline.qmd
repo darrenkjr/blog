@@ -23,7 +23,7 @@ And so, since 2018, I've made it a point to run a half marathon every year, inte
 
 The problem I've identified is consistency. The general cycle I've noticed is that I would train pretty consistently for an event in the leadup, I'd get sick or life would get in the way and I'd take breaks that would last for up to 2 months. I'd jump back in, get a niggle, and would end up sputtering to the starting line, with not enough miles in my legs. I'd reach the event, finish it, and I'd resolve to not do it again. Then, inevitably, I'd catch the bug again, start training, but always seemingly from the same baseline, and so year-on-year, improvements would come few and far between.
 
-The thing is, I've caught the bug again, and so I find myself wishing complete an Ironman sometime before I die. I've got plenty of life left to live, but I'd prefer to complete one in a respectable way [^3], within my physical prime.
+The thing is, I've caught the bug again, and so I find myself wishing complete an Ironman sometime before I die. That's a 3.9km swim, 180km bike ride, and a full marathon at the end (42.2km). I've got plenty of life left to live, but I'd prefer to complete one in a respectable way [^3], within my physical prime.
 
 [^3]: Be above average, at the very least.
 
@@ -31,7 +31,7 @@ The thing is, I've caught the bug again, and so I find myself wishing complete a
 
 It's obvious that *peak performance* depends on the event you're looking at. Things that require explosive power have a younger peak performance age, relative to things that require endurance, acquired knowledge and/or skill [@stiefel2013]. Then again, there is the added confounder of training age, ie: how long you've been intentionally training over your lifetime. From a purely physiological development perspective though, I do think that there is a inflection point after which things start going downhill. I admit to a certain amount of anxiety when it comes to this, so in that sense, time (and youth) is of the essence.
 
-Thankfully, I've managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020.  Granted these are **Half Ironman** results, so not at all comparable to the full Ironman, and the demands on the body will be definitely different between the two. But in any case, the Half Ironman is a stepping stone to the full, so I figure I might as well focus on the Ironman 70.3 in the near to mid term first. 
+Thankfully, I've managed to get my grubby hands on a dataset presenting Ironman 70.3 finish times from 2004 up to 2020.  Granted these are **Half Ironman** results, so not at all comparable to the full Ironman, and the demands on the body will be definitely different between the two. But in any case, the Half Ironman is a stepping stone to the full, so I figure I might as well focus on the Ironman 70.3 in the near to mid term first. **That's a 1.9km Swim, 90km bike ride, and a 21.1km run**. 
 
 In any case, this is 16 years of data! [^4], and it seems that the triathlon bug is hitting, and hitting good. Ironman 70.3 Triathlons are now big business, with 1572 finishers in 2004, up to a peak of 116,196 in 2019 (@fig-finishercount), though I'd attribute the dip in 2020 to Covid.
 
