@@ -10,7 +10,6 @@ categories: [General, Personal, Food]
 link-citations: true
 reference-location: margin
 cap-location: margin
-bibliography: personal.bib
 ---
 
 # Ingredients 
