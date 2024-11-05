@@ -23,7 +23,7 @@ And so, since 2018, I've made it a point to run a half marathon every year, inte
 
 The problem I've identified is consistency. The general cycle I've noticed is that I would train pretty consistently for an event in the leadup, I'd get sick or life would get in the way and I'd take breaks that would last for up to 2 months. I'd jump back in, get a niggle, and would end up sputtering to the starting line, with not enough miles in my legs. I'd reach the event, finish it, and I'd resolve to not do it again. Then, inevitably, I'd catch the bug again, start training, but always seemingly from the same baseline, and so year-on-year, improvements would come few and far between.
 
-The thing is, I've caught the bug again, and so I find myself wishing complete an Ironman sometime before I die. I've got plenty of life left to live, but I'd prefer to complete one in a respectable way [^3], within my physical prime. But what does this even mean?
+The thing is, I've caught the bug again, and so I find myself wishing complete an Ironman sometime before I die. I've got plenty of life left to live, but I'd prefer to complete one in a respectable way [^3], within my physical prime.
 
 [^3]: Be above average, at the very least.
 
@@ -143,6 +143,11 @@ The thing is, with participation higher than ever before excepting the blip in 2
 #| echo: false
 
 df_amateur_yearly_avg = pd.DataFrame(df_amateur['EventYear'].unique()).rename(columns={0:'EventYear'})
+df_3035 = df_amateur_workingage[df_amateur_workingage['AgeGroup'] == "30-34"]
+df_3035_yearly_avg = pd.DataFrame(df_3035['EventYear'].unique()).rename(columns={0:'EventYear'})
+
+
+
 for i in range (0,100,5): 
     for col in time_cols: 
         colname = col + '_'+str(100-i)+'_percentile'
@@ -151,7 +156,13 @@ for i in range (0,100,5):
         quantile_data.rename(columns={col:colname}, inplace=True)
         df_amateur_yearly_avg = pd.merge(df_amateur_yearly_avg, quantile_data, on='EventYear', how='left')
 
+        quantile_data_3035 = df_3035.groupby(['EventYear'])[col].quantile(i/100).reset_index()
+        #convert to hh:mm:ss format 
+        quantile_data_3035.rename(columns={col:colname}, inplace=True)
+        df_3035_yearly_avg = pd.merge(df_3035_yearly_avg, quantile_data_3035, on='EventYear', how='left')
+
 df_pro_yearly_avg = pd.DataFrame(df_pro['EventYear'].unique()).rename(columns={0:'EventYear'})
+
 for i in range (0,100,5): 
     for col in time_cols: 
         colname = col + '_'+str(100-i)+'_percentile'
@@ -261,7 +272,7 @@ Markdown(tabulate(df_eventyear_finish_corr, headers = 'keys', tablefmt = 'pipe',
 
 ```
 
-But then again, I have no ambitions at the moment for ever becoming elite in any age-group, nor going pro for that matter. However, I don't wish to just *finish*. What this data is telling me then is that we've got some reasonably stable benchmarks (@tbl-finishtimepct_benchmarks) that will hold steady for quite a while yet. Out of all of these, the running benchmarks seem to be the most reasonable. Though keep in mind that running is the last event of the triathlon, so you're going to be running on tired legs, after an average of 2.5 hours of hard cycling. In isolation though, it does *seem* to be in the realm of possibility. 
+But then again, I have no ambitions at the moment for ever becoming elite in any age-group, nor going pro for that matter. However, I don't wish to just *finish*. What this data is telling me then is that we've got some reasonably stable benchmarks (@tbl-finishtimepct_benchmarks) that will hold steady for quite a while yet. 
 
 ```{python}
 #| label: tbl-finishtimepct_benchmarks
@@ -286,6 +297,8 @@ def seconds_to_hhmmss(seconds):
     return f'{int(hours):02}:{int(minutes):02}:{int(seconds):02}'
 
 # Calculate mean and standard deviation for each percentile column
+
+
 df_mean_pct = df_amateur_yearly_avg[finish_percentile_col].mean().round(2)
 df_std_pct = df_amateur_yearly_avg[finish_percentile_col].std().round(2)
 df_mean_pct = df_mean_pct.apply(lambda x : seconds_to_hhmmss(x))
@@ -308,66 +321,65 @@ df_benchmark_names = pd.DataFrame(benchmark_names, columns=['Benchmark'])
 # # Concatenate benchmark names with combined mean and SD values
 df_benchmarks = pd.concat([df_benchmark_names, df_meanstd_pivot], axis=1)
 df_benchmarks.drop(columns = ['Percentile'], inplace = True)
+col_order = ['Benchmark', 'SwimTime', 'BikeTime', 'RunTime', 'FinishTime']
+df_benchmarks_order = df_benchmarks[col_order]
 
 # # Use tabulate to create a markdown table from the DataFrame
-markdown_table = tabulate(df_benchmarks, headers='keys', tablefmt='pipe', showindex=False)
+markdown_table = tabulate(df_benchmarks_order, headers='keys', tablefmt='pipe', showindex=False)
 Markdown(markdown_table)
 ```
 
-
-## Age Groups and Performance, How Long Do I Have At My Theoretical Peak?
-
-Alright, we now know what seems to be a reasonable enough time to finish an Ironman 70.3 across *all age groups*. But does age matter at all? Do i have all the time in the world to train for this if my goal is to just be above average? 
-
-```{python}
-
-#for each 
-contingency_table = pd.crosstab(df_amateur_workingage['Performance_category'], df_amateur_workingage['AgeGroup'])
-contingency_norm = round(contingency_table.div(contingency_table.sum(axis =1), axis = 0)*100,2)
-contingency_table = contingency_table.reset_index()
-norm_contingency_tbl = tabulate(contingency_norm, headers='keys', tablefmt='pipe', showindex = False)
-Markdown(norm_contingency_tbl)
-
-# Display the contingency table
-
-```
-
-```{python}
-contingency_table
-```
+Now, it's worth keeping in mind that these are for **ALL Age Groups**. I'm turning 30 next year, so my actual benchmarks to hit over the next 5 years are: 
 
 
 ```{python}
-import statsmodels.api as sm
+#| label: tbl-finishtimepct_benchmarks_3035
+#| tbl-cap: Completely Arbitrary Benchmark Finish Times at various performance percentiles, Amateur Males, Aged 30-35)
+#| echo: false
 
-# Create dummy variables for AgeGroup with drop_first=True
-age_group_dummies = pd.get_dummies(df_amateur_workingage['AgeGroup'], drop_first=True, prefix='AgeGroup')
+# Calculate mean and standard deviation for each percentile column
 
-# Fit multinomial logistic regression model
-multinomial = sm.MNLogit(df_amateur_workingage['Performance_category'], age_group_dummies)
-result = multinomial.fit()
-# Get unique age groups
-all_agegrp = df_amateur_workingage['AgeGroup'].unique()
-df_agegrptest = pd.get_dummies(pd.Series(all_agegrp), drop_first =True)
-# Predict probabilities for each age group
-predicted_probs = result.predict(df_agegrptest)
 
-# Add age group labels to predicted probabilities dataframe
-predicted_probs['AgeGroup'] = all_agegrp
-# Define the desired order of age groups
-desired_order = ['18-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64']
+df_amateur_3035 = df_3035_yearly_avg
+df_mean_pct = df_amateur_3035[finish_percentile_col].mean().round(2)
+df_std_pct = df_amateur_3035[finish_percentile_col].std().round(2)
+df_mean_pct = df_mean_pct.apply(lambda x : seconds_to_hhmmss(x))
+df_std_pct = df_std_pct.apply(lambda x : seconds_to_hhmmss(x))
 
-# Reorder predicted_probs dataframe based on desired order of age groups
-predicted_probs['AgeGroup'] = pd.Categorical(predicted_probs['AgeGroup'], categories=desired_order, ordered=True)
-predicted_probs = predicted_probs.sort_values(by='AgeGroup')
+# Combine mean and SD into a single string for each column
+mean_std_combined = df_mean_pct.astype(str) + " ± " + df_std_pct.astype(str)
+mean_std_combined
 
-# Reset index if needed
-predicted_probs = predicted_probs.reset_index(drop=True)
-predicted_probs
+# Create a DataFrame for the combined mean and SD values
+df_mean_std_combined = pd.DataFrame(mean_std_combined, columns=['Mean Finish Times ± SD']).reset_index(drop=True)
+df_mean_std_combined['Event_pct'] = finish_percentile_col 
+#extract event and percentiles 
+df_mean_std_combined[["Event", "Percentile"]] = df_mean_std_combined['Event_pct'].str.extract(r"(.+Time)_(\d+_percentile)")
+df_meanstd_pivot = df_mean_std_combined.pivot(index = "Percentile", columns = "Event", values = "Mean Finish Times ± SD").reset_index()
+
+# # Create a DataFrame for benchmark names
+df_benchmark_names = pd.DataFrame(benchmark_names, columns=['Benchmark'])
+
+# # Concatenate benchmark names with combined mean and SD values
+df_benchmarks_3035 = pd.concat([df_benchmark_names, df_meanstd_pivot], axis=1)
+df_benchmarks_3035.drop(columns = ['Percentile'], inplace = True)
+col_order = ['Benchmark', 'SwimTime', 'BikeTime', 'RunTime', 'FinishTime']
+df_benchmarks_order_3035 = df_benchmarks_3035[col_order]
+
+# # Use tabulate to create a markdown table from the DataFrame
+markdown_table = tabulate(df_benchmarks_order_3035, headers='keys', tablefmt='pipe', showindex=False)
+Markdown(markdown_table)
 ```
+
+Out of all of these, the running benchmarks seem to be the most reasonable. Though keep in mind that running is the last event of the triathlon, so you're going to be running on tired legs, after an average of 2.8 hours of hard cycling. In isolation though, it does *seem* to be witin the realm of possibility. 
 
 ## My Current Baseline
 
-As of writing (12th June 2024), I am 29 years old, and stand at 174 cm (5'9") at a slightly tubby 77kg.
+As of writing (12th June 2024), I am 29 years old, and stand at 174 cm (5'9") at a slightly tubby 77kg. As of 5th November 2024, I've committed to an Olympic Tri on the 23rd of March 2025, 5 days befire I turn 30. Ironman 70.3 Melbourne after that is on the 9th November 2025. Giving me exactly a year to train. 
 
-Endurance
+* My Half Marathon Lifetime PR (set last year while I was training for the Sydney Mara) is 1:49
+* The last time I swam consistently was when I was 14 
+* And the hybrid bike (Trek FX 3 DISC) I bought last year has sat (mostly unused) in the garage (oops)
+* My Garmin says I have a VO2 Max of 48 (doesn't matter, I'm hilariously unfit right now)
+
+Will I get there? Stay tuned. 
