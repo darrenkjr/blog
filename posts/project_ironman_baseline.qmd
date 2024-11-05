@@ -10,7 +10,7 @@ categories: [General, Personal, Fitness]
 link-citations: true
 reference-location: margin
 cap-location: margin
-bibliography: personal.bib
+bibliography: references\project_ironman_baseline.bib
 ---
 
 So I've been in a bit of a situationship with my fitness for a long time. Grew up chubby, a sore spot I used to hold, though I wouldn't say I was particularly sedentary [^1]. However, it's only been in the past 8 years that I've been *intentional* with how I saw my fitness.
