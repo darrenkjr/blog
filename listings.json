@@ -2,10 +2,10 @@
   {
     "listing": "/blog_listing.html",
     "items": [
+      "/posts/mums_beef_rendang.html",
       "/posts/thesiswriting_aprimer.html",
       "/posts/project_ironman_baseline.html",
-      "/posts/on_having_little_to_say.html",
-      "/posts/mums_beef_rendang.html"
+      "/posts/on_having_little_to_say.html"
     ]
   }
 ]
