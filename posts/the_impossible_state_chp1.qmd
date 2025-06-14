@@ -1,0 +1,50 @@
+---
+date: last-modified
+date-format: "DD MMMM, YYYY"
+title: Modernity and Islam - Competing Paradigms and Malaysia's Balancing Act
+subtitle: Notes from a reading of The Impossible State by Wael Hallaq, Chapter 1
+author: Darren Rajit
+format: 
+    html: 
+        echo: false
+categories: [General, Personal, Malaysia]
+link-citations: true
+reference-location: margin
+cap-location: margin
+---
+
+## Malaysia's Pre and Post Colonial Legal Inheritance
+
+Malaysia, where I was born, has an interesting dichotomy when it comes to its rule of law. In the first instance, applied to everyone, is a legal framework that holds its roots broadly in the European tradition (eg: British common law with a constitutional government). Makes sense, we used to be a colony. Before the Europeans came however, Malaysia (or Malaya for that matter) had been Islamic since the 1500s, and enshrined in our constitution is the idea of a dual legal system. Make no mistake, the common law framework inherited from our colonial masters is the supreme law of the land, but we also have secondary system manifested in the Syariah courts. It only applies to Muslims, and its reach is very much limited within Malaysia's system. 
+
+For the record, I am no expert in either of these subjects, and I write this more as a curious, non-Muslim Malaysian progressive trying to understand the crossroads that Malaysia has been trying to straddle since its independence. Indeed, I would say our current Prime Minister, Anwar Ibrahim, was a big driver for Malaysia's Islamisation that started in the late 70s to 80s, and while in his later political career he has positioned himself as a secular reformist; it's hard to ignore his earlier career history as well and how much of his groundwork would have led to the ["Green Wave"](https://en.wikipedia.org/wiki/Green_Wave_(Malaysia)) in the 2022 Malaysian federal election. I recognise the challenges though, and I don't envy his position. 
+
+## The Impossible State by Wael Hallaq : Notes from Chapter 1
+
+Anyway, this serves as the backdrop for my interest in ["The Impossible State" Wael Hallaq](https://www.goodreads.com/book/show/15857315-the-impossible-state). The central thesis here is that the conception of an "Islamic State" is by itself contradictory, and impossible. 
+
+And if this central thesis is true, I wonder what that means for Malaysia's future, and its balancing act in trying to negotiate the role of Islam within the concept of Malaysia as a nation.
+
+I'm not done with the book yet, and admittedly it's a bit of a dense read for a layperson like myself, but I wanted to jot down some of my notes from Chapter 1. Wael starts off highlighting the 'failures' of the modern Islamic state, citing Iran as a failure in both Islamic governenance and as a modern state, and other Muslim countries on top of that. 
+
+Here I wish he could give more examples on how these countries pay "lip service" to the idea of Sharia norms of governance, but I'm going to accept this premise for now. But it's not even that these Islamic states "fail", but more so that the idea of an Islamic "state" in the nation-state sense is inherently self-contradictory.  
+
+## Modernity and Islam Competing Ends : Progress vs Morality
+
+The crux here is that the conception of a "nation state" is what has perverted Sharia norms, and many muslim countries have inherited the fruits of colonialism such as the nation state that are by nature, incompatible with Islamic forms of governance, because the "state apparatus" subordinates Sharia. And so Wael posits that we can't really learn anything about how Sharia can be implemented from its modern implementations. For that, we need to look at pre-colonial Islam. 
+
+He defends this by positing that the difference here is between two competing paradigms. Islamic governance, where God and morality (with Sharia as the governing moral and ethical framework) is the central driving force of the paradigm, and everything else in society is framed around these "central domains", and law, economy, governance are designed towards accomplishing moral ends. 
+
+The other paradigm is "modernity", where "progress" is the central driving force instead; and morality and ethics, while related, are subordinate to the ideas of progress as a self-evident truth. He traces this from ideas emergent during the European enlightenment. The separation of church and state, the "is" vs "ought" distinction, and how this has lead to what he perceives as a moral vacuumn in modernity. 
+
+In this sense I can see what Wael is coming to. Within the current nation state framework, a lot of our inherited post-colonial state apparatus, assumptions, and even our ways of relating to each other, stem from modernity of the European tradition as a paradigm, where the evermarching pace of progress is self-evident. In here, in contrast to Sharia, progress, instead of morality, is the ends. 
+
+And so Wael then points that to even conceive of what Sharia could or should look like, we need to draw on from precolonial Islamic thought for inspiration (in the sense of a moral based paradigm). He pre-empts critique surrounding nostalgia (ie: the idea that of the "good ol days"), highlighting that this is another conception of modernity, that holds the present as the most important thing, and indeed the modernist project is specifically geared around framing the past to reinforce the present. The nostalgia critique is further addressed, because as he notes that this implicitly presupposes that "progress" cannot be questioned.  
+
+## Personal Thoughts
+
+The rest of the introduction here expands on this more, but at core Chapter 1 is really a critique on modernity, and I do find his notes persuasive thus far. But then, comes the "So What?" for Malaysia. Is Malaysia as a project doomed to fail? Is the Green Wave for that matter misguided, and is Anwar's courting of the religious right in Malaysia doomed to contradiction if we follow it to its conclusion? Can the idea of nation building, and citizenship be reconciled within a paradigm where really, God is the highest authority? Can we conceive of social organisation outside of the idea of the nation state? 
+
+Other questions arise. With Wael's critique of modernity, does this explain the rise of the Degrowth movement in the UK? And more specifically with the incompatibility beween Islam and Modernity, how does this explain the USA's failed attempts for nation building in Afghanistan and Iraq? 
+
+I don't have the answers to this yet, and I suspect that Wael doesn't either, but I'm interested enough to find out more. 

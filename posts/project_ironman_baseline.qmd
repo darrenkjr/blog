@@ -6,7 +6,7 @@ author: Darren Rajit
 format: 
     html: 
         echo: false
-categories: [General, Personal, Fitness]
+categories: [Personal, Fitness]
 link-citations: true
 reference-location: margin
 cap-location: margin

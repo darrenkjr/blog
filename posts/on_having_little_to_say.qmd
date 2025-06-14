@@ -6,7 +6,7 @@ author: Darren Rajit
 format: 
     html: 
         code-fold: true
-categories: [General, Personal]
+categories: [Personal]
 ---
 
 There was a time where writing was a source of joy for me. Catharsis, renewal, synthesis, and everything in between. Late nights where I would sift through the cobwebs in my head, squeeze out something that made sense to me, and regurgitate what was in my head into form. Over the past 5 years, I seem to have lost the capacity to do so. To create as it were, and it troubles me that I have settled into a steady rhythm of slack-jawed consuming. 
